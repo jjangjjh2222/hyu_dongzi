@@ -10,9 +10,9 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="asdf"
+        android:text="Dongzi"
         android:textSize="40sp"
         tools:layout_editor_absoluteX="144dp"
-        tools:layout_editor_absoluteY="339dp" />
+        tools:layout_editor_absoluteY="327dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
