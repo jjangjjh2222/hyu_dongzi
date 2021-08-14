@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:text="asdf"
         android:textSize="40sp"
-        tools:layout_editor_absoluteX="144dp"
+        tools:layout_editor_absoluteX="166dp"
         tools:layout_editor_absoluteY="339dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
