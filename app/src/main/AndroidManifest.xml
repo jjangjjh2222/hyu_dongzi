@@ -28,6 +28,7 @@
         <activity android:name=".HomeActivity">
         </activity>
 
+
     </application>
 
 </manifest>
