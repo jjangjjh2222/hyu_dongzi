@@ -5,10 +5,10 @@
       <map>
         <entry key="..\:/f/hyu_dongzi/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/f/hyu_dongzi/app/src/main/res/layout/activity_main.xsd" value="0.296195652173913" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.2953125" />
-        <entry key="app/src/main/res/layout/activity_main.xsd" value="0.30512820512820515" />
-        <entry key="app/src/main/res/layout/activity_reg.xml" value="0.2953125" />
-        <entry key="app/src/main/res/layout/activity_reg_next.xml" value="0.2953125" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_reg.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/activity_reg_next.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/tool_bar.xml" value="0.16757246376811594" />
       </map>
     </option>
   </component>
