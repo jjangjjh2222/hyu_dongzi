@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Dongzi</string>
     <string name="tv_login">둥지에 오신 것을 환영합니다 ;)</string>
-    <string name="tf_phonenumber_hint">전화번호</string>
+    <string name="tf_phoneNumber_hint">전화번호</string>
     <string name="tf_password_hint">비밀번호</string>
     <string name="btn_login_text">로그인</string>
     <string name="tv_register_text">아직 회원이 아니신가요?</string>
@@ -13,7 +13,7 @@
     <string name="tf_name_text">이름 입력</string>
     <string name="tv_password_text">비밀번호를 입력해주세요.</string>
     <string name="tf_password_text">영문, 숫자, 특수문자 포함 8~20자리</string>
-    <string name="tf_chech_password_text">비밀번호 확인</string>
+    <string name="tf_check_password_text">비밀번호 확인</string>
     <string name="tv_email">이메일 주소를 입력해주세요.</string>
     <string name="tf_email_text">example@email.com</string>
     <string name="btn_phone_text">휴대폰 인증</string>
