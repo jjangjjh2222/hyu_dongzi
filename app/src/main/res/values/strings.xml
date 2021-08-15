@@ -23,4 +23,5 @@
     <string name="checkBox3_text">개인정보 수집 및 이용 동의(필수)</string>
     <string name="checkBox4_text">광고성 정보 수신 동의(선택)</string>
     <string name="btn_pass_text">Pass</string>
+    <string name="toolbar_text">한양대 ERICA 캠퍼스</string>
 </resources>
