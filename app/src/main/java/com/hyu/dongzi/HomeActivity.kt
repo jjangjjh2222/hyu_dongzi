@@ -1,5 +1,6 @@
 package com.hyu.dongzi
 
+import android.content.Intent
 import android.media.Image
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -10,6 +11,7 @@ import com.hyu.dongzi.navigation.ChatFragment
 import com.hyu.dongzi.navigation.DetailViewFragment
 import com.hyu.dongzi.navigation.UserFragment
 import kotlinx.android.synthetic.main.activity_home.*
+import kotlinx.android.synthetic.main.activity_main.*
 
 class HomeActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener {
     override fun onNavigationItemSelected(p0: MenuItem): Boolean {
@@ -41,5 +43,7 @@ class HomeActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         super.onCreate(savedInstanceState)
         setContentView(binding.root) //xml 화면 뷰를 연결한다.
         bottom_navigation.setOnNavigationItemSelectedListener(this)
+
+
     }
 }

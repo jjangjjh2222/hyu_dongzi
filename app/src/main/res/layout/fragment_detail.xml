@@ -7,7 +7,7 @@
 
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btn_room"
         android:layout_width="160dp"
         android:layout_height="160dp"
         android:layout_marginStart="30dp"
@@ -22,7 +22,7 @@
         android:layout_height="160dp"
         android:layout_marginTop="160dp"
         android:layout_marginEnd="30dp"
-        android:text="서비스1"
+        android:text="청소 대행"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -32,7 +32,7 @@
         android:layout_height="160dp"
         android:layout_marginStart="30dp"
         android:layout_marginBottom="160dp"
-        android:text="서비스2"
+        android:text="짐 맡기기"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -42,7 +42,7 @@
         android:layout_height="160dp"
         android:layout_marginEnd="30dp"
         android:layout_marginBottom="160dp"
-        android:text="서비스3"
+        android:text="가구 빌리기"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
