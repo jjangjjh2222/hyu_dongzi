@@ -15,9 +15,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root) //xml 화면 뷰를 연결한다.
 
-        btn_register.setOnClickListener {
+        btn_register.setOnClickListener { // 회원가입 버튼 누르면 화면 넘어가는 기능
 
             val intent = Intent(this, RegActivity::class.java )
+            startActivity(intent)
+
+        }
+
+        btn_login.setOnClickListener { // 로그인 버튼 누르면 화면 넘어가는 기능
+
+            val intent = Intent(this, HomeActivity::class.java )
             startActivity(intent)
 
         }
