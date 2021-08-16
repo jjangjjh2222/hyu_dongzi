@@ -25,25 +25,25 @@ class MainActivity : AppCompatActivity() {
         }
 
         btn_login.setOnClickListener { // 로그인 버튼 누르면 화면 넘어가는 기능
-            signinAndSignup()
+            signinEmail()
         }
 
     }
-    fun signinAndSignup() {
-        auth?.createUserWithEmailAndPassword(email_edittext.text.toString(), password_edittext.text.toString())
-            ?.addOnCompleteListener {
-            task ->
-                if(task.isSuccessful) {
-                    //Creating a user account
-                }else if(task.exception?.message.isNullOrEmpty()) {
-                    //Show the error message
-                    Toast.makeText(this, task.exception?.message, Toast.LENGTH_LONG).show()
-                }else {
-                    //Login if you have account
-                    signinEmail()
-                }
-            }
-        }
+//    fun signinAndSignup() {
+//        auth?.createUserWithEmailAndPassword(email_edittext.text.toString(), password_edittext.text.toString())
+//            ?.addOnCompleteListener {
+//            task ->
+//                if(task.isSuccessful) {
+//                    //Creating a user account
+//                }else if(task.exception?.message.isNullOrEmpty()) {
+//                    //Show the error message
+//                    Toast.makeText(this, task.exception?.message, Toast.LENGTH_LONG).show()
+//                }else {
+//                    //Login if you have account
+//                    signinEmail()
+//                }
+//            }
+//        }
 
     fun signinEmail() {
         auth?.signInWithEmailAndPassword(email_edittext.text.toString(), password_edittext.text.toString())
