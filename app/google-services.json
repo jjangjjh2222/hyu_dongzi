@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "25519392986",
+    "project_id": "hyu-dongzi",
+    "storage_bucket": "hyu-dongzi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:25519392986:android:ea9d51f868eb1626c37de3",
+        "android_client_info": {
+          "package_name": "com.example.textbutton"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "25519392986-80q9dcfbufqh4btg1mggje1gm5s8cb02.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpYh-e08ZqzN0K4oNIcGHTgHG8Q2pN7oE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "25519392986-80q9dcfbufqh4btg1mggje1gm5s8cb02.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
