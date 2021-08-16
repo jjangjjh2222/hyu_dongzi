@@ -52,6 +52,7 @@ class MainActivity : AppCompatActivity() {
                 if(task.isSuccessful) {
                     //Login
                     moveMainPage(task.result!!.user)
+                    Toast.makeText(this, "로그인 되었습니다 !!", Toast.LENGTH_LONG).show()
                 }else {
                     //Show the error message
                     Toast.makeText(this, task.exception?.message, Toast.LENGTH_LONG).show()

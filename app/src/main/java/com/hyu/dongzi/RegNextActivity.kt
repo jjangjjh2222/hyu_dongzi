@@ -32,6 +32,7 @@ class RegNextActivity : AppCompatActivity() {
                 if(task.isSuccessful) {
                     //Creating a user account
                     moveMainPage(task.result?.user)
+                    Toast.makeText(this, "회원가입 되었습니다 !!", Toast.LENGTH_LONG).show()
                 }else {
                     //Show the error message
                     Toast.makeText(this, task.exception?.message, Toast.LENGTH_LONG).show()
