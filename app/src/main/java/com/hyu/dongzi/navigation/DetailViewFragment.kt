@@ -21,7 +21,7 @@ class DetailViewFragment : Fragment() {
     ): View? {
 //        var view = LayoutInflater.from(activity).inflate(R.layout.fragment_detail, container, false)
 //        return view
-        val binding = FragmentDetailBinding.inflate(inflater, container, false)
+        val binding = FragmentDetailBinding.inflate(inflater, container, false) // 방 둘러보기 화면으로 넘어가는 기능
         fragmentDetailBinding = binding
         fragmentDetailBinding!!.btnRoom.setOnClickListener {
             val intent = Intent(this.context, RoomsActivity::class.java)
