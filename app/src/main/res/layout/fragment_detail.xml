@@ -13,6 +13,7 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="160dp"
         android:text="방 둘러보기"
+        android:textAppearance="@style/title_text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -23,6 +24,7 @@
         android:layout_marginTop="160dp"
         android:layout_marginEnd="30dp"
         android:text="청소 대행"
+        android:textAppearance="@style/title_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -33,6 +35,7 @@
         android:layout_marginStart="30dp"
         android:layout_marginBottom="160dp"
         android:text="짐 맡기기"
+        android:textAppearance="@style/title_text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -43,6 +46,7 @@
         android:layout_marginEnd="30dp"
         android:layout_marginBottom="160dp"
         android:text="가구 빌리기"
+        android:textAppearance="@style/title_text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
