@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Hyu_dongzi">
         <activity
+            android:name=".RoomInformation"
+            android:exported="true" />
+        <activity
             android:name=".AddRoomActivity"
             android:exported="true" />
         <activity

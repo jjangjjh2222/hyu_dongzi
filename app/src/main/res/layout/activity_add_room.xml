@@ -210,6 +210,13 @@
 
             </LinearLayout>
 
+            <Button
+                android:id="@+id/btn_regRoom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="등록하기"
+                android:layout_margin="16dp"/>
+
         </LinearLayout>
 
     </ScrollView>
