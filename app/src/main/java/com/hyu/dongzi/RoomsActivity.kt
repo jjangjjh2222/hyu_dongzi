@@ -3,11 +3,13 @@ package com.hyu.dongzi
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.database.FirebaseDatabase
 import com.hyu.dongzi.databinding.ActivityRoomsBinding
+import kotlinx.android.synthetic.main.activity_add_room.*
 import kotlinx.android.synthetic.main.activity_rooms.*
 
 class RoomsActivity : AppCompatActivity() {
-
+    private var uid:String= ""
     val binding by lazy { ActivityRoomsBinding.inflate(layoutInflater) }
 
 
@@ -29,12 +31,33 @@ class RoomsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root) //xml 화면 뷰를 연결한다.
 
+        if(intent.hasExtra("uid")){
+
+            uid = intent.getStringExtra("uid")
+        }
+
         val adapter = roomsAdapter(this, roomsList)
         ListView.adapter = adapter
 
         fab_add_room.setOnClickListener {
             val intent = Intent(this, AddRoomActivity::class.java)
             startActivity(intent)
+        }
+
+        btn_addRoom.setOnClickListener {
+
+            val database = FirebaseDatabase.getInstance()
+            val myRef = database.getReference()
+
+            val dataInput = Rooms(
+
+
+
+
+
+            )
+            myRef.child(uid).push().setValue(dataInput)
+
         }
     }
 }

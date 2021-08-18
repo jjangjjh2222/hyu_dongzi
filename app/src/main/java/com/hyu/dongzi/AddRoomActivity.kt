@@ -5,12 +5,19 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
 import android.view.View
+import com.google.firebase.database.FirebaseDatabase
+import kotlinx.android.synthetic.main.activity_add_room.*
 import kotlinx.android.synthetic.main.fragment_user.*
 
 class AddRoomActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_room)
+
+
+
+
     }
 
     fun loadImage(view: View) {
