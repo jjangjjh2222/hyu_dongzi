@@ -25,14 +25,14 @@ class AddRoomActivity : AppCompatActivity() {
 
             val database = FirebaseDatabase.getInstance()
             val myRef = database.getReference()
-
             val dataInput = Rooms(
+                uid.toString(),
                 btn_add_image.imageAlpha.toInt(),
                 et_deposit.text.toString(),
                 et_monthly.text.toString(),
                 toggleButton3.text.toString()
             )
-            myRef.child(uid!!).push().setValue(dataInput)
+            myRef.child("board").push().setValue(dataInput)
         }
     }
     fun loadImage(view: View) {

@@ -18,16 +18,16 @@ class RoomsActivity : AppCompatActivity() {
 
 //     listView 에 들어갈 정보들을 Rooms 클래스에 맞춰 roomsList 라는 List 에 담음
     val roomsList = arrayListOf<Rooms>(
-        Rooms(R.drawable.ic_launcher_foreground, "300만원", "30만원", "원룸"),
-        Rooms(R.drawable.ic_launcher_foreground, "100만원", "35만원", "원룸"),
-        Rooms(R.drawable.ic_launcher_foreground, "200만원", "30만원", "원룸"),
-        Rooms(R.drawable.ic_launcher_foreground, "500만원", "40만원", "원룸"),
-        Rooms(R.drawable.ic_launcher_foreground, "50만원", "30만원", "원룸"),
-        Rooms(R.drawable.ic_launcher_foreground, "10만원", "50만원", "투룸"),
-        Rooms(R.drawable.ic_launcher_foreground, "150만원", "30만원", "원룸"),
-        Rooms(R.drawable.ic_launcher_foreground, "250만원", "30만원", "원룸"),
-        Rooms(R.drawable.ic_launcher_foreground, "30만원", "30만원", "원룸"),
-        Rooms(R.drawable.ic_launcher_foreground, "5만원", "30만원", "원룸")
+//        Rooms(R.drawable.ic_launcher_foreground, "300만원", "30만원", "원룸"),
+//        Rooms(R.drawable.ic_launcher_foreground, "100만원", "35만원", "원룸"),
+//        Rooms(R.drawable.ic_launcher_foreground, "200만원", "30만원", "원룸"),
+//        Rooms(R.drawable.ic_launcher_foreground, "500만원", "40만원", "원룸"),
+//        Rooms(R.drawable.ic_launcher_foreground, "50만원", "30만원", "원룸"),
+//        Rooms(R.drawable.ic_launcher_foreground, "10만원", "50만원", "투룸"),
+//        Rooms(R.drawable.ic_launcher_foreground, "150만원", "30만원", "원룸"),
+//        Rooms(R.drawable.ic_launcher_foreground, "250만원", "30만원", "원룸"),
+//        Rooms(R.drawable.ic_launcher_foreground, "30만원", "30만원", "원룸"),
+//        Rooms(R.drawable.ic_launcher_foreground, "5만원", "30만원", "원룸")
     )
 
     override fun onCreate(savedInstanceState: Bundle?) { //onCreate = 앱이 최초 실행되었을 때 수행한다.
@@ -63,20 +63,5 @@ class RoomsActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-//        btn_addRoom.setOnClickListener {
-//
-//            val database = FirebaseDatabase.getInstance()
-//            val myRef = database.getReference()
-//
-//            val dataInput = Rooms(
-//                btn_add_image.imageAlpha.toInt(),
-//                et_deposit.text.toString(),
-//                et_monthly.text.toString(),
-//                toggleButton3.text.toString()
-//
-//            )
-//
-//            myRef.child(uid!!).push().setValue(dataInput)
-//        }
     }
 }
