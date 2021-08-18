@@ -2,17 +2,20 @@ package com.hyu.dongzi
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Adapter
 import android.widget.AdapterView
 import androidx.appcompat.app.AppCompatActivity
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.*
 import com.hyu.dongzi.databinding.ActivityRoomsBinding
 import kotlinx.android.synthetic.main.activity_add_room.*
 import kotlinx.android.synthetic.main.activity_rooms.*
 import kotlinx.android.synthetic.main.fragment_user.view.*
 
+
 class RoomsActivity : AppCompatActivity() {
 //    private var uid:String?= ""
+    private lateinit var auth : FirebaseAuth
+    private lateinit var database : DatabaseReference
     val binding by lazy { ActivityRoomsBinding.inflate(layoutInflater) }
 
 
@@ -33,11 +36,8 @@ class RoomsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) { //onCreate = 앱이 최초 실행되었을 때 수행한다.
         super.onCreate(savedInstanceState)
         setContentView(binding.root) //xml 화면 뷰를 연결한다.
-
-//        if(intent.hasExtra("uid")){
-//
-//            uid = intent.getStringExtra("uid")
-//        }
+        auth = FirebaseAuth.getInstance()
+        database = FirebaseDatabase.getInstance().getReference().child("board")
 
         ListView.onItemClickListener = AdapterView.OnItemClickListener{parent, view, position, id ->
             val selectItem = parent.getItemAtPosition(position) as Rooms
@@ -60,8 +60,29 @@ class RoomsActivity : AppCompatActivity() {
 
         fab_add_room.setOnClickListener {
             val intent = Intent(this, AddRoomActivity::class.java)
+            intent.putExtra("uid", auth.currentUser?.uid)
             startActivity(intent)
         }
+
+        database.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                TODO("Not yet implemented")
+            }
+
+            override fun onCancelled(dataSnapshot: DatabaseError) {
+               // 실패했을 때
+            }
+
+            override fun onDataChange(dataSnapshot: DatabaseError) {
+                for (data in dataSnapshot.child) {
+
+                    val modelResult = data.getValue(Rooms::class.java)
+                    title_array.add(modelResult?.title.toString())
+                }
+                list_adapter.notifyDataSetChanged()
+            }
+        })
+
 
     }
 }

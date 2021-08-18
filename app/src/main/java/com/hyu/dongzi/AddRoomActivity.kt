@@ -33,6 +33,9 @@ class AddRoomActivity : AppCompatActivity() {
                 toggleButton3.text.toString()
             )
             myRef.child("board").push().setValue(dataInput)
+
+            val intent = Intent(this, RoomsActivity::class.java)
+            startActivity(intent)
         }
     }
     fun loadImage(view: View) {
