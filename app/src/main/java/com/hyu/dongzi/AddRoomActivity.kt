@@ -10,11 +10,16 @@ import kotlinx.android.synthetic.main.activity_add_room.*
 import kotlinx.android.synthetic.main.fragment_user.*
 
 class AddRoomActivity : AppCompatActivity() {
+//    private var uid:String?= ""
     val binding by lazy { ActivityAddRoomBinding.inflate(layoutInflater) }
     override fun onCreate(savedInstanceState: Bundle?) { //onCreate = 앱이 최초 실행되었을 때 수행한다.
         super.onCreate(savedInstanceState)
         setContentView(binding.root) //xml 화면 뷰를 연결한다.
 
+//        if(intent.hasExtra("uid")){
+//
+//            uid = intent.getStringExtra("uid")
+//        }
 
 
     }

@@ -10,7 +10,7 @@ import kotlinx.android.synthetic.main.activity_rooms.*
 import kotlinx.android.synthetic.main.fragment_user.view.*
 
 class RoomsActivity : AppCompatActivity() {
-    private var uid:String?= ""
+//    private var uid:String?= ""
     val binding by lazy { ActivityRoomsBinding.inflate(layoutInflater) }
 
 
@@ -32,10 +32,10 @@ class RoomsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root) //xml 화면 뷰를 연결한다.
 
-        if(intent.hasExtra("uid")){
-
-            uid = intent.getStringExtra("uid")
-        }
+//        if(intent.hasExtra("uid")){
+//
+//            uid = intent.getStringExtra("uid")
+//        }
 
         val adapter = roomsAdapter(this, roomsList)
         ListView.adapter = adapter
@@ -45,21 +45,20 @@ class RoomsActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        btn_addRoom.setOnClickListener {
-
-            val database = FirebaseDatabase.getInstance()
-            val myRef = database.getReference()
-
-            val dataInput = Rooms(
-                btn_add_image.imageAlpha.toInt(),
-                et_deposit.text.toString(),
-                et_monthly.text.toString(),
-                toggleButton3.text.toString()
-
-            )
-
-            myRef.child(uid!!).push().setValue(dataInput)
-
-        }
+//        btn_addRoom.setOnClickListener {
+//
+//            val database = FirebaseDatabase.getInstance()
+//            val myRef = database.getReference()
+//
+//            val dataInput = Rooms(
+//                btn_add_image.imageAlpha.toInt(),
+//                et_deposit.text.toString(),
+//                et_monthly.text.toString(),
+//                toggleButton3.text.toString()
+//
+//            )
+//
+//            myRef.child(uid!!).push().setValue(dataInput)
+//        }
     }
 }
