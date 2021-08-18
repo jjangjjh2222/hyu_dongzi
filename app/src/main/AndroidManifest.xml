@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Hyu_dongzi">
         <activity
+            android:name=".AddRoomActivity"
+            android:exported="true" />
+        <activity
+            android:name=".AddRoom"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
@@ -18,21 +24,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".RegActivity">
-        </activity>
-
-        <activity android:name=".RegNextActivity">
-        </activity>
-
-        <activity android:name=".HomeActivity">
-        </activity>
-
-        <activity android:name=".RoomsActivity">
-        </activity>
-
-
-
+        <activity android:name=".RegActivity" />
+        <activity android:name=".RegNextActivity" />
+        <activity android:name=".HomeActivity" />
+        <activity android:name=".RoomsActivity" />
     </application>
 
 </manifest>
