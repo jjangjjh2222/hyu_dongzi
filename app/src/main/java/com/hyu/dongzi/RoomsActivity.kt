@@ -7,13 +7,14 @@ import com.google.firebase.database.FirebaseDatabase
 import com.hyu.dongzi.databinding.ActivityRoomsBinding
 import kotlinx.android.synthetic.main.activity_add_room.*
 import kotlinx.android.synthetic.main.activity_rooms.*
+import kotlinx.android.synthetic.main.fragment_user.view.*
 
 class RoomsActivity : AppCompatActivity() {
-    private var uid:String= ""
+    private var uid:String?= ""
     val binding by lazy { ActivityRoomsBinding.inflate(layoutInflater) }
 
 
-    // listView 에 들어갈 정보들을 Rooms 클래스에 맞춰 roomsList 라는 List 에 담음
+//     listView 에 들어갈 정보들을 Rooms 클래스에 맞춰 roomsList 라는 List 에 담음
     val roomsList = arrayListOf<Rooms>(
         Rooms(R.drawable.ic_launcher_foreground, "300만원", "30만원", "원룸"),
         Rooms(R.drawable.ic_launcher_foreground, "300만원", "30만원", "원룸"),
@@ -50,13 +51,14 @@ class RoomsActivity : AppCompatActivity() {
             val myRef = database.getReference()
 
             val dataInput = Rooms(
-
-
-
-
+                btn_add_image.imageAlpha.toInt(),
+                et_deposit.text.toString(),
+                et_monthly.text.toString(),
+                toggleButton3.text.toString()
 
             )
-            myRef.child(uid).push().setValue(dataInput)
+
+            myRef.child(uid!!).push().setValue(dataInput)
 
         }
     }

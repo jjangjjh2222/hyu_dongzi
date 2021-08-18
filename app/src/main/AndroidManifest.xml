@@ -16,9 +16,6 @@
             android:name=".AddRoomActivity"
             android:exported="true" />
         <activity
-            android:name=".AddRoom"
-            android:exported="true" />
-        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

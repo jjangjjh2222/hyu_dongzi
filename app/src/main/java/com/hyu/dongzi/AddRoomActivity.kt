@@ -5,16 +5,15 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
 import android.view.View
-import com.google.firebase.database.FirebaseDatabase
+import com.hyu.dongzi.databinding.ActivityAddRoomBinding
 import kotlinx.android.synthetic.main.activity_add_room.*
 import kotlinx.android.synthetic.main.fragment_user.*
 
 class AddRoomActivity : AppCompatActivity() {
-
-    override fun onCreate(savedInstanceState: Bundle?) {
+    val binding by lazy { ActivityAddRoomBinding.inflate(layoutInflater) }
+    override fun onCreate(savedInstanceState: Bundle?) { //onCreate = 앱이 최초 실행되었을 때 수행한다.
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_add_room)
-
+        setContentView(binding.root) //xml 화면 뷰를 연결한다.
 
 
 
