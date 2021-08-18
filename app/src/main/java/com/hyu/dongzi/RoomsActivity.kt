@@ -1,5 +1,6 @@
 package com.hyu.dongzi
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.hyu.dongzi.databinding.ActivityRoomsBinding
@@ -28,10 +29,12 @@ class RoomsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root) //xml 화면 뷰를 연결한다.
 
-
-
         val adapter = roomsAdapter(this, roomsList)
-
         ListView.adapter = adapter
+
+        fab_add_room.setOnClickListener {
+            val intent = Intent(this, AddRoomActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
