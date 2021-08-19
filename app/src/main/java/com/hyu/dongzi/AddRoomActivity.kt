@@ -9,10 +9,15 @@ import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 
 class AddRoomActivity : AppCompatActivity() {
+    private var uid:String?= ""
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_room)
+
+        if(intent.hasExtra("uid")){
+            uid = intent.getStringExtra("uid")
+        }
 
         val uploadButton = findViewById<Button>(R.id.btn_upload)
         uploadButton.setOnClickListener {
@@ -29,6 +34,7 @@ class AddRoomActivity : AppCompatActivity() {
             )
 
             val intent = Intent(this, RoomsActivity::class.java)
+
             startActivity(intent)
 
         }

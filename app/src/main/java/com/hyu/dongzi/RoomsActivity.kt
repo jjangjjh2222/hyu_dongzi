@@ -7,16 +7,18 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.ListView
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 
+
 class RoomsActivity : AppCompatActivity() {
 
     lateinit var adapter : RoomListAdapter
-
+    private lateinit var auth : FirebaseAuth
     val list = mutableListOf<Room>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,6 +35,7 @@ class RoomsActivity : AppCompatActivity() {
         addRoomButton.setOnClickListener {
 
             val intent = Intent(this, AddRoomActivity::class.java)
+//            intent.putExtra("uid", auth.currentUser?.uid)
             startActivity(intent)
 
         }
