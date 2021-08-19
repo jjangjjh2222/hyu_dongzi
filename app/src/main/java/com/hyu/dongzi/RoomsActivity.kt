@@ -24,6 +24,11 @@ class RoomsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_rooms)
 
+        val reButton = findViewById<Button>(R.id.btn_re)
+        reButton.setOnClickListener {
+            adapter.notifyDataSetChanged()
+        }
+
         val addRoomButton = findViewById<Button>(R.id.btn_addRoom)
         addRoomButton.setOnClickListener {
 
