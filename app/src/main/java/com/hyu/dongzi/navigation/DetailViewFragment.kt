@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import android.content.Intent
 import androidx.viewpager2.widget.ViewPager2
-import com.google.firebase.auth.FirebaseAuth
 import com.hyu.dongzi.RoomsActivity
 import com.hyu.dongzi.databinding.FragmentDetailBinding
 
