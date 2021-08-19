@@ -10,8 +10,9 @@ import android.widget.TextView
 
 
 // 어뎁터 생성
-class roomsAdapter (val context: Context,
-                    val roomsList: ArrayList<Rooms> // 정보들이 들어있는 리스트를 받아옴
+class roomsAdapter(
+    val context: Context,
+    val roomsList: MutableList<Rooms> // 정보들이 들어있는 리스트를 받아옴
                     ) : BaseAdapter() {
 
     // 일단 중요하지 않음
@@ -43,7 +44,7 @@ class roomsAdapter (val context: Context,
         val room = roomsList[position]
 
         //위에서 지정했던 xml 파일 위치 변수에 room 에 들어있는 값 할당
-        roomImage.setImageResource(room.roomImage)
+//        roomImage.setImageResource(room.roomImage)
         deposit.text = room.deposit
         monthly.text = room.monthly
         roomType.text = room.roomType

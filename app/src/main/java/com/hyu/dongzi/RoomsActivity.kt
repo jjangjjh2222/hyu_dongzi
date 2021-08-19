@@ -12,25 +12,20 @@ import kotlinx.android.synthetic.main.activity_rooms.*
 import kotlinx.android.synthetic.main.fragment_user.view.*
 
 
+
+
 class RoomsActivity : AppCompatActivity() {
 //    private var uid:String?= ""
     private lateinit var auth : FirebaseAuth
     private lateinit var database : DatabaseReference
+
+
     val binding by lazy { ActivityRoomsBinding.inflate(layoutInflater) }
 
 
 //     listView 에 들어갈 정보들을 Rooms 클래스에 맞춰 roomsList 라는 List 에 담음
     val roomsList = arrayListOf<Rooms>(
 //        Rooms(R.drawable.ic_launcher_foreground, "300만원", "30만원", "원룸"),
-//        Rooms(R.drawable.ic_launcher_foreground, "100만원", "35만원", "원룸"),
-//        Rooms(R.drawable.ic_launcher_foreground, "200만원", "30만원", "원룸"),
-//        Rooms(R.drawable.ic_launcher_foreground, "500만원", "40만원", "원룸"),
-//        Rooms(R.drawable.ic_launcher_foreground, "50만원", "30만원", "원룸"),
-//        Rooms(R.drawable.ic_launcher_foreground, "10만원", "50만원", "투룸"),
-//        Rooms(R.drawable.ic_launcher_foreground, "150만원", "30만원", "원룸"),
-//        Rooms(R.drawable.ic_launcher_foreground, "250만원", "30만원", "원룸"),
-//        Rooms(R.drawable.ic_launcher_foreground, "30만원", "30만원", "원룸"),
-//        Rooms(R.drawable.ic_launcher_foreground, "5만원", "30만원", "원룸")
     )
 
     override fun onCreate(savedInstanceState: Bundle?) { //onCreate = 앱이 최초 실행되었을 때 수행한다.
@@ -38,6 +33,7 @@ class RoomsActivity : AppCompatActivity() {
         setContentView(binding.root) //xml 화면 뷰를 연결한다.
         auth = FirebaseAuth.getInstance()
         database = FirebaseDatabase.getInstance().getReference().child("board")
+
 
         ListView.onItemClickListener = AdapterView.OnItemClickListener{parent, view, position, id ->
             val selectItem = parent.getItemAtPosition(position) as Rooms
@@ -65,24 +61,38 @@ class RoomsActivity : AppCompatActivity() {
         }
 
         database.addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                TODO("Not yet implemented")
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                for (dataModel in dataSnapshot.children) {
+                    val item = dataModel.getValue(Rooms::class.java)
+                    roomsList.add(item!!)
+                }
+                adapter.notifyDataSetChanged()
+
             }
 
             override fun onCancelled(dataSnapshot: DatabaseError) {
-               // 실패했을 때
-            }
-
-            override fun onDataChange(dataSnapshot: DatabaseError) {
-                for (data in dataSnapshot.child) {
-
-                    val modelResult = data.getValue(Rooms::class.java)
-                    title_array.add(modelResult?.title.toString())
-                }
-                list_adapter.notifyDataSetChanged()
+                // 실패했을 때
             }
         })
 
 
+
     }
+
+
+//    private fun getRoomsData() {
+//        val postListener = object : ValueEventListener {
+//            override fun onDataChange(dataSnapshot: DataSnapshot) {
+//                for (dataModel in dataSnapshot.children) {
+//                    val item = dataModel.getValue(Rooms::class.java)
+//                    roomsList.add(item!!)
+//                }
+//                adapter.notifyDataSetChanged()
+//            }
+//            override fun onCancelled(dataSnapshot: DatabaseError) {
+//                // 실패했을 때
+//            }
+//
+//        }
+//    }
 }
