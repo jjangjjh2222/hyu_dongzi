@@ -5,6 +5,7 @@ import android.graphics.ColorSpace
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.AdapterView
 import android.widget.Button
 import android.widget.ListView
 import com.google.firebase.auth.FirebaseAuth
@@ -26,11 +27,16 @@ class RoomsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_rooms)
 
+
+        // 새로고침 버튼
         val reButton = findViewById<Button>(R.id.btn_re)
         reButton.setOnClickListener {
-            adapter.notifyDataSetChanged()
+            val intent = Intent(this, RoomsActivity::class.java)
+            startActivity(intent)
         }
 
+
+        // 방등록 버튼
         val addRoomButton = findViewById<Button>(R.id.btn_addRoom)
         addRoomButton.setOnClickListener {
 
@@ -45,8 +51,22 @@ class RoomsActivity : AppCompatActivity() {
         val lv = findViewById<ListView>(R.id.lv_roomsList)
         lv.adapter = adapter
 
+        lv.onItemClickListener = AdapterView.OnItemClickListener{ parent, view, position, id ->
+
+            val selectItem = parent.getItemAtPosition(position) as Room
+            val intent = Intent(this, RoomInformationActivity::class.java)
+
+            intent.putExtra("deposit", selectItem.deposit)
+            intent.putExtra("monthly", selectItem.monthly)
+            intent.putExtra("id", selectItem.id)
+
+            startActivity(intent)
+
+        }
+
         getData()
     }
+
 
     fun getData() {
 
@@ -66,7 +86,6 @@ class RoomsActivity : AppCompatActivity() {
             }
 
             override fun onCancelled(databaseError: DatabaseError) {
-                // Getting Post failed, log a message
                 Log.w("RoomsActivity", "loadPost:onCancelled", databaseError.toException())
             }
         }
