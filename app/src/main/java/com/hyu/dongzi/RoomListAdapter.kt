@@ -12,7 +12,7 @@ import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
 import org.w3c.dom.Text
 
-class RoomListAdapter (val List : MutableList<Room>) : BaseAdapter() {
+class RoomListAdapter(val List: MutableList<Room>) : BaseAdapter() {
     override fun getCount(): Int {
         return List.count()
     }
@@ -27,15 +27,14 @@ class RoomListAdapter (val List : MutableList<Room>) : BaseAdapter() {
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
 
-        var view  = convertView
+        var view = convertView
 
-        if(view == null) {
+        if (view == null) {
             view = LayoutInflater.from(parent?.context).inflate(R.layout.room_item, parent, false)
         }
 
         val deposit = view?.findViewById<TextView>(R.id.tv_deposit)
         val monthly = view?.findViewById<TextView>(R.id.tv_monthly)
-        val id = view?.findViewById<TextView>(R.id.tv_id)
 
         val storageReference = Firebase.storage.reference.child(List[position].id + ".png")
         val image = view?.findViewById<ImageView>(R.id.iv_roomImage)
@@ -56,7 +55,6 @@ class RoomListAdapter (val List : MutableList<Room>) : BaseAdapter() {
 
         deposit!!.text = List[position].deposit
         monthly!!.text = List[position].monthly
-        id!!.text = List[position].id
 
 
         return view!!

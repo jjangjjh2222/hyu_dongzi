@@ -8,6 +8,7 @@ import android.util.Log
 import android.widget.AdapterView
 import android.widget.Button
 import android.widget.ListView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -27,17 +28,8 @@ class RoomsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_rooms)
 
-
-        // 새로고침 버튼
-        val reButton = findViewById<Button>(R.id.btn_re)
-        reButton.setOnClickListener {
-            val intent = Intent(this, RoomsActivity::class.java)
-            startActivity(intent)
-        }
-
-
         // 방등록 버튼
-        val addRoomButton = findViewById<Button>(R.id.btn_addRoom)
+        val addRoomButton = findViewById<FloatingActionButton>(R.id.btn_addRoom)
         addRoomButton.setOnClickListener {
 
             val intent = Intent(this, AddRoomActivity::class.java)

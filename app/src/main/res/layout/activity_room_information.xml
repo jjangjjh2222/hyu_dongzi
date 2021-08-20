@@ -4,49 +4,92 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RoomInformationActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".RoomInformationActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <FrameLayout
+        android:id="@+id/frameLayout"
         android:layout_width="match_parent"
-        android:layout_height="60dp">
+        android:layout_height="60dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="20dp"
+            android:text="방 정보"
+            android:textAppearance="@style/title_text" />
 
-            android:layout_marginTop="20dp"
-            android:text="채팅"
-            android:textAppearance="@style/title_text"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
 
     <ImageView
         android:id="@+id/iv_roomInformImage"
         android:layout_width="match_parent"
         android:layout_height="300dp"
+        android:layout_marginTop="12dp"
         app:srcCompat="@drawable/ic_baseline_account_box_24" />
 
-    <TextView
-        android:id="@+id/tv_roomInformDeposit"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:text="TextView" />
 
-    <TextView
-        android:id="@+id/tv_roomInformMonthly"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:text="TextView" />
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/tv_roomInformId"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:text="TextView" />
+        <TextView
+            android:id="@+id/tv_roomInformDeposit"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="12dp"
+            android:gravity="center_vertical"
+            android:text="TextView"
+            android:textAppearance="@style/content_text" />
+
+        <TextView
+            android:id="@+id/tv_roomInformMonthly"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="12dp"
+            android:gravity="center_vertical"
+            android:text="TextView"
+            android:textAppearance="@style/content_text" />
+
+        <TextView
+            android:id="@+id/tv_roomInformId"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="12dp"
+            android:gravity="center_vertical"
+            android:text="TextView"
+            android:textAppearance="@style/content_text" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="12dp"
+            android:layout_weight="10"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button6"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:text="계약하기"
+                android:textAppearance="@style/content_text" />
+
+            <Button
+                android:id="@+id/button7"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_marginStart="12dp"
+                android:layout_weight="10"
+                android:text="문의하기"
+                android:textAppearance="@style/content_text" />
+        </LinearLayout>
+    </LinearLayout>
 
 
 </LinearLayout>
