@@ -7,10 +7,17 @@
          Google Maps Android API v2, but you must specify either coarse or fine
          location permissions for the "MyLocation" functionality.
     -->
+    <!-- 현재 위치를 위한 권한 요청 -->
+    <!--네트워크로만 위치를 파악합니다.-->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- GPS센서를 이용해서 위치를 파악합니다. -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!-- 인터넷 권한 요청 -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+
 
     <application
+        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
