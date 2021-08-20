@@ -24,4 +24,5 @@
     <string name="checkBox4_text">광고성 정보 수신 동의(선택)</string>
     <string name="btn_pass_text">Pass</string>
     <string name="toolbar_text">한양대 ERICA 캠퍼스</string>
+    <string name="title_activity_maps">MapsActivity</string>
 </resources>

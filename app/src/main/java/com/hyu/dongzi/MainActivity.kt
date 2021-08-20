@@ -24,6 +24,11 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        btn_map.setOnClickListener { // 회원가입 버튼 누르면 화면 넘어가는 기능
+            val intent2 = Intent(this, MapsActivity::class.java )
+            startActivity(intent2)
+        }
+
         btn_login.setOnClickListener { // 로그인 버튼 누르면 화면 넘어가는 기능
             signinEmail()
         }
