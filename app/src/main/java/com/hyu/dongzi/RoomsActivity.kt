@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.AdapterView
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.ListView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
@@ -36,6 +37,13 @@ class RoomsActivity : AppCompatActivity() {
 //            intent.putExtra("uid", auth.currentUser?.uid)
             startActivity(intent)
 
+        }
+
+        // 지도 버튼
+        val mapButton = findViewById<ImageView>(R.id.btn_map)
+        mapButton.setOnClickListener {
+            val intent = Intent(this, MapsActivity::class.java)
+            startActivity(intent)
         }
 
         adapter = RoomListAdapter(list)
