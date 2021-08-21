@@ -10,14 +10,14 @@
         android:id="@+id/tv_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="24dp"
         android:text="@string/tv_name_text"
         android:textAppearance="@style/title_text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tf_name"
+        android:id="@+id/t_name"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -27,6 +27,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_name">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
@@ -38,11 +39,11 @@
         android:id="@+id/tv_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="24dp"
         android:text="@string/tv_password_text"
         android:textAppearance="@style/title_text"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tf_name" />
+        app:layout_constraintTop_toBottomOf="@id/t_name" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tf_password"
@@ -63,18 +64,28 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
+    <TextView
+        android:id="@+id/tv_university"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="학교를 입력해주세요."
+        android:textAppearance="@style/title_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tf_password" />
+
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tf_check_password"
+        android:id="@+id/tv_universityddd"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:hint="@string/tf_check_password_text"
+        android:layout_marginTop="24dp"
+        android:hint="학교 입력"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tf_password">
+        app:layout_constraintTop_toBottomOf="@+id/tv_university">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_loginPassword"
+            android:id="@+id/et_university"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
@@ -86,11 +97,11 @@
         android:id="@+id/tv_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="24dp"
         android:text="@string/tv_email"
         android:textAppearance="@style/title_text"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tf_check_password" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_universityddd" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tf_email"
