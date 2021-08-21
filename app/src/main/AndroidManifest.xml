@@ -1,30 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.hyu.dongzi">
-
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
          location permissions for the "MyLocation" functionality.
     -->
     <!-- 현재 위치를 위한 권한 요청 -->
-    <!--네트워크로만 위치를 파악합니다.-->
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <!-- GPS센서를 이용해서 위치를 파악합니다. -->
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <!-- 인터넷 권한 요청 -->
-    <uses-permission android:name="android.permission.INTERNET"/>
-
+    <!-- 네트워크로만 위치를 파악합니다. -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- GPS센서를 이용해서 위치를 파악합니다. -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- 인터넷 권한 요청 -->
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Hyu_dongzi">
-
+        android:theme="@style/Theme.Hyu_dongzi"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".EditMyImformation"
+            android:exported="true" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").

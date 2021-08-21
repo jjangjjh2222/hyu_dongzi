@@ -28,7 +28,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_login">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/email_edittext"
+            android:id="@+id/et_loginEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
@@ -47,7 +47,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tf_phoneNumber">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/password_edittext"
+            android:id="@+id/et_loginPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
@@ -102,13 +102,5 @@
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@+id/tv_register"
         tools:layout_editor_absoluteX="45dp" />
-
-    <Button
-        android:id="@+id/btn_map"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="34dp"
-        tools:layout_editor_absoluteY="52dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,72 +3,53 @@ package com.hyu.dongzi
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.widget.EditText
 import android.widget.Toast
 import com.hyu.dongzi.databinding.ActivityMainBinding
 import kotlinx.android.synthetic.main.activity_main.*
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 
 class MainActivity : AppCompatActivity() {
 
-    val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
-    var auth : FirebaseAuth? =  null
-    override fun onCreate(savedInstanceState: Bundle?) { //onCreate = 앱이 최초 실행되었을 때 수행한다.
-        super.onCreate(savedInstanceState)
-        setContentView(binding.root) //xml 화면 뷰를 연결한다.
-        auth = FirebaseAuth.getInstance()
+    private lateinit var auth: FirebaseAuth
 
-        btn_register.setOnClickListener { // 회원가입 버튼 누르면 화면 넘어가는 기능
+    override fun onCreate(savedInstanceState: Bundle?) {
+
+        auth = Firebase.auth
+
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        // 로그인 버튼
+        btn_login.setOnClickListener {
+
+            val email = findViewById<EditText>(R.id.et_loginEmail)
+            val password = findViewById<EditText>(R.id.et_loginPassword)
+
+            auth.signInWithEmailAndPassword(email.text.toString(), password.text.toString())
+                .addOnCompleteListener(this) { task ->
+                    if (task.isSuccessful) {
+                        val intent = Intent(this, HomeActivity::class.java)
+                        startActivity(intent)
+                        Toast.makeText(this, "로그인 성공", Toast.LENGTH_SHORT).show()
+                    } else {
+                        Toast.makeText(this, "로그인 실패", Toast.LENGTH_SHORT).show()
+                    }
+
+                }
+
+        }
+
+        // 회원가입 버튼
+        btn_register.setOnClickListener {
             val intent = Intent(this, RegActivity::class.java )
             startActivity(intent)
         }
 
-        btn_map.setOnClickListener { // 회원가입 버튼 누르면 화면 넘어가는 기능
-            val intent2 = Intent(this, MapsActivity::class.java )
-            startActivity(intent2)
-        }
-
-        btn_login.setOnClickListener { // 로그인 버튼 누르면 화면 넘어가는 기능
-            signinEmail()
-        }
-
-    }
-//    fun signinAndSignup() {
-//        auth?.createUserWithEmailAndPassword(email_edittext.text.toString(), password_edittext.text.toString())
-//            ?.addOnCompleteListener {
-//            task ->
-//                if(task.isSuccessful) {
-//                    //Creating a user account
-//                }else if(task.exception?.message.isNullOrEmpty()) {
-//                    //Show the error message
-//                    Toast.makeText(this, task.exception?.message, Toast.LENGTH_LONG).show()
-//                }else {
-//                    //Login if you have account
-//                    signinEmail()
-//                }
-//            }
-//        }
-
-    fun signinEmail() {
-        auth?.signInWithEmailAndPassword(email_edittext.text.toString(), password_edittext.text.toString())
-            ?.addOnCompleteListener {
-                    task ->
-                if(task.isSuccessful) {
-                    //Login
-                    moveMainPage(task.result!!.user)
-                    Toast.makeText(this, "로그인 되었습니다 !!", Toast.LENGTH_LONG).show()
-                }else {
-                    //Show the error message
-                    Toast.makeText(this, task.exception?.message, Toast.LENGTH_LONG).show()
-                }
-            }
-    }
-
-    fun moveMainPage(user:FirebaseUser?){
-        if(user != null) {
-            startActivity(Intent(this, HomeActivity::class.java))
-        }
     }
 }
-

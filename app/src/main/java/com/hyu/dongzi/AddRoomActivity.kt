@@ -15,6 +15,7 @@ import android.widget.Toast
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
+import kotlinx.android.synthetic.main.activity_add_room.*
 import java.io.ByteArrayOutputStream
 
 class AddRoomActivity : AppCompatActivity() {
@@ -33,7 +34,7 @@ class AddRoomActivity : AppCompatActivity() {
 //        }
 
         val uploadButton = findViewById<Button>(R.id.btn_upload)
-        uploadButton.setOnClickListener {
+        btn_upload.setOnClickListener {
 
             val deposit = findViewById<EditText>(R.id.et_deposit)
             val monthly = findViewById<EditText>(R.id.et_monthly)

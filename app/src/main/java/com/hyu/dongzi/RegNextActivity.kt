@@ -3,49 +3,41 @@ package com.hyu.dongzi
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.EditText
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
-import com.hyu.dongzi.databinding.ActivityRegNextBinding
-import kotlinx.android.synthetic.main.activity_main.email_edittext
-import kotlinx.android.synthetic.main.activity_main.password_edittext
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_reg_next.*
 
 class RegNextActivity : AppCompatActivity() {
 
-    val binding by lazy { ActivityRegNextBinding.inflate(layoutInflater) }
-    var auth : FirebaseAuth? =  null
-    override fun onCreate(savedInstanceState: Bundle?) { //onCreate = 앱이 최초 실행되었을 때 수행한다.
+    private lateinit var auth: FirebaseAuth
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+
+        auth = Firebase.auth
+
         super.onCreate(savedInstanceState)
-        setContentView(binding.root) //xml 화면 뷰를 연결한다.
-        auth = FirebaseAuth.getInstance()
+        setContentView(R.layout.activity_reg_next)
 
-        btn_phone.setOnClickListener { // 로그인 버튼 누르면 화면 넘어가는 기능
-            signinAndSignup()
-        }
-    }
+        btn_join.setOnClickListener {
 
-    fun signinAndSignup() {
-        auth?.createUserWithEmailAndPassword(email_edittext.text.toString(), password_edittext.text.toString())
-            ?.addOnCompleteListener {
-                    task ->
-                if(task.isSuccessful) {
-                    //Creating a user account
-                    moveMainPage(task.result?.user)
-                    Toast.makeText(this, "회원가입 되었습니다 !!", Toast.LENGTH_LONG).show()
-                }else {
-                    //Show the error message
-                    Toast.makeText(this, task.exception?.message, Toast.LENGTH_LONG).show()
+            val email = findViewById<EditText>(R.id.et_regEmail)
+            val password = findViewById<EditText>(R.id.et_regPassword)
+
+            auth.createUserWithEmailAndPassword(email.text.toString(), password.text.toString())
+                .addOnCompleteListener(this) { task ->
+                    if (task.isSuccessful) {
+                        val intent = Intent(this, MainActivity::class.java)
+                        startActivity(intent)
+                        Toast.makeText(this, "회원가입 완료", Toast.LENGTH_SHORT).show()
+                    } else {
+                        Toast.makeText(this, "회원가입 실패", Toast.LENGTH_SHORT).show()
+                    }
                 }
 
-            }
-    }
-
-    fun moveMainPage(user: FirebaseUser?){
-        if(user != null) {
-            startActivity(Intent(this, MainActivity::class.java))
         }
+
     }
 }
-
-

@@ -17,8 +17,7 @@ class DetailViewFragment : Fragment() {
 
     private val mPager: ViewPager2? = null
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
-    ): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 //        var view = LayoutInflater.from(activity).inflate(R.layout.fragment_detail, container, false)
 //        return view
         val binding = FragmentDetailBinding.inflate(inflater, container, false) // 방 둘러보기 화면으로 넘어가는 기능
