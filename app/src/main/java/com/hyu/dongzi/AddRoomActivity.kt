@@ -12,6 +12,8 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
@@ -20,18 +22,16 @@ import java.io.ByteArrayOutputStream
 
 class AddRoomActivity : AppCompatActivity() {
 
-//    private var uid:String?= ""
+    private lateinit var auth: FirebaseAuth
 
     val storage = Firebase.storage
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
+        auth = Firebase.auth
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_room)
-
-//        if(intent.hasExtra("uid")){
-//            uid = intent.getStringExtra("uid")
-//        }
 
         val uploadButton = findViewById<Button>(R.id.btn_upload)
         btn_upload.setOnClickListener {
@@ -46,10 +46,13 @@ class AddRoomActivity : AppCompatActivity() {
 
             val key = myRef.push().key.toString()
 
+            val uid = auth.currentUser?.uid
+
             myRef.child(key).setValue(
                 Room(deposit.text.toString(),
                     monthly.text.toString(),
-                    key)
+                    key,
+                    uid.toString())
             )
 
             Toast.makeText(this, "방 등록중...", Toast.LENGTH_SHORT).show()

@@ -79,4 +79,14 @@
         app:layout_constraintStart_toEndOf="@+id/tv_monthly"
         app:layout_constraintTop_toTopOf="@+id/tv_monthly" />
 
+    <TextView
+        android:id="@+id/tv_uid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="1dp"
+        android:text="uid"
+        app:layout_constraintStart_toEndOf="@+id/iv_roomImage"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
