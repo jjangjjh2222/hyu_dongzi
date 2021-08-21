@@ -21,7 +21,7 @@
         android:theme="@style/Theme.Hyu_dongzi"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".EditMyImformation"
+            android:name=".EditInformActivity"
             android:exported="true" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
