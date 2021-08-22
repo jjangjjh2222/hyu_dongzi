@@ -71,6 +71,11 @@ class RoomInformationActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        btn_contract.setOnClickListener {
+            val intent = Intent(this, ContractActivity::class.java)
+            startActivity(intent)
+        }
+
 //        btn_chat.setOnClickListener {
 //            val lc = findViewById<RecyclerView>(R.id.chatListRecyclerView)
 //            lc.adapter = chatListAdapter

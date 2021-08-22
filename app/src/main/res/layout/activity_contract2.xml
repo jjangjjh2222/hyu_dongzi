@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="120dp"
-        android:text="@string/textView_text"
+        android:text="온라인 계약 이용에 동의합니다."
         android:textAppearance="@style/title_text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -19,8 +19,8 @@
         android:id="@+id/checkBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
-        android:text="@string/checkBox_text"
+        android:layout_marginTop="152dp"
+        android:text="입력하는 서명의 법적 효력에 대해 동의합니다."
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -28,8 +28,8 @@
         android:id="@+id/checkBox2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:text="@string/checkBox2_text"
+        android:layout_marginTop="10dp"
+        android:text="서명완료 후 블록체인에 저장되는 문서를 원본으로 인정합니다."
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/checkBox" />
 
@@ -38,7 +38,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="@string/checkBox3_text"
+        android:text="모든 서명 참여자가 서명 입력에 정당한 권한을 가지는 것을 확인하였습니다."
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/checkBox2" />
 
@@ -47,7 +47,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="@string/checkBox4_text"
+        android:text="기타 자세한 내용은 이용약관 및 개인정보처리방침에 따라 동의합니다."
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/checkBox3" />
 
@@ -55,10 +55,12 @@
         android:id="@+id/btn_write"
         android:layout_width="0dp"
         android:layout_height="60dp"
-        android:text="@string/btn_pass_text"
+        android:layout_marginTop="43dp"
+        android:text="간편 전자계약 작성"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox4" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
