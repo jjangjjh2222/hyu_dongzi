@@ -58,6 +58,7 @@
         <activity android:name=".RegNextActivity" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".RoomsActivity" />
+        <activity android:name=".chatdetail.ChatRoomActivity" />
     </application>
 
 </manifest>

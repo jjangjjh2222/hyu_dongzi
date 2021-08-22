@@ -10,7 +10,6 @@ import com.bumptech.glide.Glide
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
-import org.w3c.dom.Text
 
 class RoomListAdapter(val List: MutableList<Room>) : BaseAdapter() {
     override fun getCount(): Int {

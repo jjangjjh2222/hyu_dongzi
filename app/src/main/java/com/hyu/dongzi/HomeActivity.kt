@@ -1,13 +1,11 @@
 package com.hyu.dongzi
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.firebase.auth.FirebaseAuth
 import com.hyu.dongzi.databinding.ActivityHomeBinding
-import com.hyu.dongzi.navigation.ChatFragment
+import com.hyu.dongzi.ChatList.ChatListFragment
 import com.hyu.dongzi.navigation.DetailViewFragment
 import com.hyu.dongzi.navigation.UserFragment
 import kotlinx.android.synthetic.main.activity_home.*
@@ -22,7 +20,7 @@ class HomeActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
                 return true
             }
             R.id.action_chat ->{
-                val chatFragment = ChatFragment()
+                val chatFragment = ChatListFragment()
                 supportFragmentManager.beginTransaction().replace(R.id.main_content, chatFragment).commit()
                 return true
             }
