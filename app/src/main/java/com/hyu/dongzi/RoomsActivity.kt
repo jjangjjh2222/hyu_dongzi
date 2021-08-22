@@ -7,34 +7,54 @@ import android.util.Log
 import android.widget.AdapterView
 import android.widget.ImageView
 import android.widget.ListView
+import android.widget.TextView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
+import com.hyu.dongzi.databinding.FragmentUserBinding
 
 
 class RoomsActivity : AppCompatActivity() {
 
     lateinit var adapter : RoomListAdapter
-    private lateinit var auth : FirebaseAuth
+
     val list = mutableListOf<Room>()
 
+    private lateinit var auth: FirebaseAuth
+
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        auth = Firebase.auth
+
+        val uid = auth.currentUser?.uid.toString()
+
+        val database = Firebase.database
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_rooms)
 
+
+        // 사용자 학교 받아오기
+        database.getReference("users").child(uid).child("university")
+            .addValueEventListener(object :ValueEventListener{
+            override fun onDataChange(snapshot: DataSnapshot) {
+                val value = snapshot.value.toString()
+                findViewById<TextView>(R.id.tv_university).text = value
+            }
+            override fun onCancelled(error: DatabaseError) {
+            }
+        })
+
         // 방등록 버튼
         val addRoomButton = findViewById<FloatingActionButton>(R.id.btn_addRoom)
         addRoomButton.setOnClickListener {
-
             val intent = Intent(this, AddRoomActivity::class.java)
-//            intent.putExtra("uid", auth.currentUser?.uid)
             startActivity(intent)
-
         }
 
         // 지도 버튼
@@ -44,11 +64,14 @@ class RoomsActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+
         adapter = RoomListAdapter(list)
 
         val lv = findViewById<ListView>(R.id.lv_roomsList)
+
         lv.adapter = adapter
 
+        // 방 클릭시 방 정보로 이동
         lv.onItemClickListener = AdapterView.OnItemClickListener{ parent, view, position, id ->
 
             val selectItem = parent.getItemAtPosition(position) as Room
@@ -62,12 +85,11 @@ class RoomsActivity : AppCompatActivity() {
 
         }
 
+        // 방 목록 만들기
         getData()
     }
 
-
     fun getData() {
-
         val database = Firebase.database
         val myRef = database.getReference("board")
 
@@ -88,8 +110,5 @@ class RoomsActivity : AppCompatActivity() {
             }
         }
         myRef.addValueEventListener(postListener)
-
     }
-
-
 }
