@@ -15,7 +15,9 @@ import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.hyu.dongzi.EditInformActivity
 import com.hyu.dongzi.MainActivity
+import com.hyu.dongzi.SaveContractActivity
 import com.hyu.dongzi.databinding.FragmentUserBinding
+import kotlinx.android.synthetic.main.fragment_user.*
 
 class UserFragment : Fragment() {
 
@@ -32,6 +34,11 @@ class UserFragment : Fragment() {
         auth = Firebase.auth
 
         binding = FragmentUserBinding.inflate(inflater, container, false)
+
+        binding.btnContract.setOnClickListener {
+            val intent = Intent(this.context, SaveContractActivity::class.java)
+            startActivity(intent)
+        }
 
         // 정보수정 버튼
         binding.btnEditInform.setOnClickListener {

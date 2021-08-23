@@ -29,6 +29,16 @@ class ContractActivity : AppCompatActivity(){
             startActivity(intent)
         }
 
+        database.getReference("board").child(id!!).child("type")
+            .addValueEventListener(object : ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    val value = snapshot.value.toString()
+                    binding.tvType.text = value
+                }
+                override fun onCancelled(error: DatabaseError) {
+                }
+            })
+
         database.getReference("board").child(id!!).child("deposit")
             .addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {

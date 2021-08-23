@@ -76,9 +76,11 @@ class RoomsActivity : AppCompatActivity() {
 
             val selectItem = parent.getItemAtPosition(position) as Room
             val intent = Intent(this, RoomInformationActivity::class.java)
-
+            intent.putExtra("type", selectItem.type)
+            intent.putExtra("floor", selectItem.floor)
             intent.putExtra("deposit", selectItem.deposit)
             intent.putExtra("monthly", selectItem.monthly)
+            intent.putExtra("address", selectItem.address)
             intent.putExtra("id", selectItem.id)
 
             startActivity(intent)

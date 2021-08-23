@@ -3,26 +3,18 @@ package com.hyu.dongzi
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.AdapterView
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
 import com.hyu.dongzi.ChatList.ChatListAdapter
-import com.hyu.dongzi.ChatList.ChatListFragment
-import com.hyu.dongzi.ChatList.ChatListItem
-import com.hyu.dongzi.DBKey.Companion.CHILD_CHAT
-import com.hyu.dongzi.DBKey.Companion.DB_USERS
 import com.hyu.dongzi.chatdetail.ChatRoomActivity
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_main.btn_register
 import kotlinx.android.synthetic.main.activity_room_information.*
 import kotlinx.android.synthetic.main.item_chatlist.*
 import kotlinx.android.synthetic.main.room_item.*
@@ -38,17 +30,25 @@ class RoomInformationActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_room_information)
 
-
+        val type = intent.getStringExtra("type")
+        val floor = intent.getStringExtra("floor")
         val deposit = intent.getStringExtra("deposit")
         val monthly = intent.getStringExtra("monthly")
+        val address = intent.getStringExtra("address")
         val id = intent.getStringExtra("id")
 
+        val typeTextView = findViewById<TextView>(R.id.tv_roomInformtype)
+        val floorTextView = findViewById<TextView>(R.id.tv_roomInformfloor)
         val depositTextView = findViewById<TextView>(R.id.tv_roomInformDeposit)
         val monthlyTextView = findViewById<TextView>(R.id.tv_roomInformMonthly)
+        val addressTextView = findViewById<TextView>(R.id.tv_roomInformAddress)
         val idTextView = findViewById<TextView>(R.id.tv_roomInformId)
 
+        typeTextView.text = type.toString()
+        floorTextView.text = floor.toString()
         depositTextView.text = deposit.toString()
         monthlyTextView.text = monthly.toString()
+        addressTextView.text = address.toString()
         idTextView.text = id.toString()
 
         val storageReference = Firebase.storage.reference.child(id + ".png")

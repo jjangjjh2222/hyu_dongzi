@@ -39,9 +39,11 @@ class AddRoomActivity : AppCompatActivity() {
 
         val uploadButton = findViewById<Button>(R.id.btn_upload)
         btn_upload.setOnClickListener {
-
+            val type = findViewById<EditText>(R.id.tv_type)
+            val floor = findViewById<EditText>(R.id.tv_floor)
             val deposit = findViewById<EditText>(R.id.et_deposit)
             val monthly = findViewById<EditText>(R.id.et_monthly)
+            val address = findViewById<EditText>(R.id.et_address)
 
             val database = Firebase.database
             val myRef = database.getReference("board")
@@ -53,8 +55,11 @@ class AddRoomActivity : AppCompatActivity() {
             val uid = auth.currentUser?.uid
 
             myRef.child(key).setValue(
-                Room(deposit.text.toString(),
+                Room(type.text.toString(),
+                    floor.text.toString(),
+                    deposit.text.toString(),
                     monthly.text.toString(),
+                    address.text.toString(),
                     key,
                     uid.toString())
             )

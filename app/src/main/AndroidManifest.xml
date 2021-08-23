@@ -66,6 +66,7 @@
         <activity android:name=".Contract3Activity" />
         <activity android:name=".Contract4Activity" />
         <activity android:name=".Contract5Activity" />
+        <activity android:name=".SaveContractActivity" />
     </application>
 
 </manifest>

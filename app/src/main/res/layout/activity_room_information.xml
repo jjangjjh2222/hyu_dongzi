@@ -27,7 +27,7 @@
     <ImageView
         android:id="@+id/iv_roomInformImage"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="230dp"
         android:layout_marginTop="12dp"
         app:srcCompat="@drawable/ic_baseline_account_box_24" />
 
@@ -39,9 +39,27 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/tv_roomInformtype"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="12dp"
+            android:gravity="center_vertical"
+            android:text="TextView"
+            android:textAppearance="@style/content_text" />
+
+        <TextView
+            android:id="@+id/tv_roomInformfloor"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="12dp"
+            android:gravity="center_vertical"
+            android:text="TextView"
+            android:textAppearance="@style/content_text" />
+
+        <TextView
             android:id="@+id/tv_roomInformDeposit"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="40dp"
             android:layout_marginTop="12dp"
             android:gravity="center_vertical"
             android:text="TextView"
@@ -50,7 +68,16 @@
         <TextView
             android:id="@+id/tv_roomInformMonthly"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="12dp"
+            android:gravity="center_vertical"
+            android:text="TextView"
+            android:textAppearance="@style/content_text" />
+
+        <TextView
+            android:id="@+id/tv_roomInformAddress"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
             android:layout_marginTop="12dp"
             android:gravity="center_vertical"
             android:text="TextView"
@@ -59,7 +86,7 @@
         <TextView
             android:id="@+id/tv_roomInformId"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="40dp"
             android:layout_marginTop="12dp"
             android:gravity="center_vertical"
             android:text="TextView"

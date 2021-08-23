@@ -30,7 +30,25 @@ class Contract3Activity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        database.getReference("board").child(id!!).child("type")
+            .addValueEventListener(object : ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    val value = snapshot.value.toString()
+                    binding.tvType.text = value
+                }
+                override fun onCancelled(error: DatabaseError) {
+                }
+            })
 
+        database.getReference("board").child(id!!).child("floor")
+            .addValueEventListener(object : ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    val value = snapshot.value.toString()
+                    binding.tvFloor.text = value
+                }
+                override fun onCancelled(error: DatabaseError) {
+                }
+            })
 
         database.getReference("board").child(id!!).child("deposit")
             .addValueEventListener(object : ValueEventListener {
@@ -47,6 +65,16 @@ class Contract3Activity : AppCompatActivity() {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     val value = snapshot.value.toString()
                     binding.tvMonthly.text = value
+                }
+                override fun onCancelled(error: DatabaseError) {
+                }
+            })
+
+        database.getReference("board").child(id!!).child("address")
+            .addValueEventListener(object : ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    val value = snapshot.value.toString()
+                    binding.tvAddress.text = value
                 }
                 override fun onCancelled(error: DatabaseError) {
                 }

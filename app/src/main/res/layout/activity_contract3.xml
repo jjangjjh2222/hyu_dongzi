@@ -46,7 +46,7 @@
                 android:textAppearance="@style/content_text"/>
 
             <TextView
-                android:id="@+id/textView19"
+                android:id="@+id/tv_type"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="원룸"
@@ -68,7 +68,7 @@
                 android:textAppearance="@style/content_text"/>
 
             <TextView
-                android:id="@+id/textView21"
+                android:id="@+id/tv_floor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1층"
@@ -146,7 +146,7 @@
                 android:textAppearance="@style/content_text"/>
 
             <TextView
-                android:id="@+id/textView29"
+                android:id="@+id/tv_address"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="서울특별시 강남구 선릉로 6번길 10"
