@@ -28,7 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/btn_pay"
+        app:layout_constraintBottom_toTopOf="@+id/btn_write"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -64,7 +64,7 @@
                     android:textAppearance="@style/title_text" />
 
                 <TextView
-                    android:id="@+id/textView24"
+                    android:id="@+id/tv_deposit"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
@@ -82,7 +82,7 @@
                     android:textAppearance="@style/title_text" />
 
                 <TextView
-                    android:id="@+id/textView26"
+                    android:id="@+id/tv_monthly"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -140,7 +140,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/btn_pay"
+        android:id="@+id/btn_write"
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_gravity="center_horizontal"

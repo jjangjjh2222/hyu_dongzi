@@ -25,7 +25,7 @@
 
     <Button
         android:layout_marginTop="625dp"
-        android:id="@+id/btn_pay"
+        android:id="@+id/btn_write"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="전자 서명하기" />
