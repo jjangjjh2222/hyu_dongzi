@@ -8,30 +8,34 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.provider.MediaStore
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.Toast
+import android.widget.*
+import androidx.core.content.ContentProviderCompat.requireContext
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
+import com.hyu.dongzi.databinding.ActivityAddRoomBinding
 import kotlinx.android.synthetic.main.activity_add_room.*
+import org.jetbrains.anko.autoCompleteTextView
 import java.io.ByteArrayOutputStream
 
 class AddRoomActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
 
+    private lateinit var binding : ActivityAddRoomBinding
+
     val storage = Firebase.storage
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
+        binding = ActivityAddRoomBinding.inflate(layoutInflater)
+
         auth = Firebase.auth
 
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_add_room)
+        setContentView(binding.root)
 
         val uploadButton = findViewById<Button>(R.id.btn_upload)
         btn_upload.setOnClickListener {
