@@ -41,6 +41,7 @@ class HomeActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         super.onCreate(savedInstanceState)
         setContentView(binding.root) //xml 화면 뷰를 연결한다.
         bottom_navigation.setOnNavigationItemSelectedListener(this)
+        bottom_navigation
 
 
     }
