@@ -25,4 +25,30 @@
     <string name="btn_pass_text">Pass</string>
     <string name="toolbar_text">한양대 ERICA 캠퍼스</string>
     <string name="title_activity_maps">MapsActivity</string>
+
+    <string-array name="roomType">
+        <item>원룸</item>
+        <item>투룸</item>
+        <item>쉐어하우스</item>
+        <item>오피스텔</item>
+        <item>아파트</item>
+        <item>고시텔</item>
+    </string-array>
+
+    <string-array name="roomFloors">
+        <item>반지층</item>
+        <item>1층</item>
+        <item>2층</item>
+        <item>3층</item>
+        <item>4층</item>
+        <item>5층</item>
+        <item>6층</item>
+        <item>7층</item>
+        <item>8층</item>
+        <item>9층</item>
+        <item>10층</item>
+        <item>11층</item>
+        <item>12층</item>
+        <item>13층</item>
+    </string-array>
 </resources>

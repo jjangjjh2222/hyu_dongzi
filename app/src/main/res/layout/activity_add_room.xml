@@ -26,7 +26,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_margin="12dp">
+        android:layout_margin="20dp">
 
         <TextView
             android:id="@+id/textView9"
@@ -49,6 +49,30 @@
             android:text="방정보"
             android:textAppearance="@style/content_text"
             android:layout_marginTop="24dp"/>
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Spinner
+                android:entries="@array/roomType"
+                android:id="@+id/sp_roomType"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_margin="4dp"
+                android:layout_weight="1" />
+
+            <Spinner
+                android:entries="@array/roomFloors"
+                android:id="@+id/sp_roomFloors"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_margin="4dp"
+                android:layout_weight="1" />
+
+        </LinearLayout>
 
         <EditText
             android:id="@+id/et_deposit"
