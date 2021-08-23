@@ -30,7 +30,6 @@ import kotlinx.android.synthetic.main.room_item.*
 class RoomInformationActivity : AppCompatActivity() {
     private lateinit var userDB: DatabaseReference
     lateinit var chatListAdapter: ChatListAdapter
-
     private val auth: FirebaseAuth by lazy {
         Firebase.auth
     }
@@ -73,6 +72,7 @@ class RoomInformationActivity : AppCompatActivity() {
 
         btn_contract.setOnClickListener {
             val intent = Intent(this, ContractActivity::class.java)
+            intent.putExtra("id", id)
             startActivity(intent)
         }
 
