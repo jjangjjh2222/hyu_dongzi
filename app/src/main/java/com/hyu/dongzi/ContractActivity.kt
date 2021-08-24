@@ -12,9 +12,10 @@ import com.google.firebase.ktx.Firebase
 import com.hyu.dongzi.databinding.ActivityContractBinding
 import kotlinx.android.synthetic.main.activity_contract.*
 
-
 class ContractActivity : AppCompatActivity(){
+
     val database = Firebase.database
+
     var auth = Firebase.auth
 
     val binding by lazy { ActivityContractBinding.inflate(layoutInflater) }
@@ -22,6 +23,7 @@ class ContractActivity : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) { //oncreat = 앱이 최초 실행되었을 때 수행한다.
         super.onCreate(savedInstanceState)
         setContentView(binding.root) //xml 화면 뷰를 연결한다.
+
         val id = intent.getStringExtra("id")
         btn_write.setOnClickListener {
             val intent = Intent(this, Contract2Activity::class.java)
@@ -58,6 +60,5 @@ class ContractActivity : AppCompatActivity(){
                 override fun onCancelled(error: DatabaseError) {
                 }
             })
-
     }
 }
