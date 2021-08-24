@@ -219,11 +219,12 @@
                         android:textSize="16sp" />
 
                     <TextView
+                        android:id="@+id/tv_roomInformexplain"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
-                        android:textColor="@color/black"
-                        android:text="방설명입니다. 방설명입니다. 방설명입니다. 방설명입니다. 방설명입니다. 방설명입니다. 방설명입니다. 방설명입니다. 방설명입니다. 방설명입니다. 방설명입니다. 방설명입니다. 방설명입니다. "/>
+                        android:text="방설명입니다. 방설명입니다. 방설명입니다. 방설명입니다. 방설명입니다. 방설명입니다. 방설명입니다. 방설명입니다. 방설명입니다. 방설명입니다. 방설명입니다. 방설명입니다. 방설명입니다. "
+                        android:textColor="@color/black" />
 
                 </LinearLayout>
 
