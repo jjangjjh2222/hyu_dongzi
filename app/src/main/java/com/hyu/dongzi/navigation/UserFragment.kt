@@ -13,9 +13,7 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
-import com.hyu.dongzi.EditInformActivity
-import com.hyu.dongzi.MainActivity
-import com.hyu.dongzi.SaveContractActivity
+import com.hyu.dongzi.*
 import com.hyu.dongzi.databinding.FragmentUserBinding
 import kotlinx.android.synthetic.main.fragment_user.*
 
@@ -43,6 +41,18 @@ class UserFragment : Fragment() {
         // 정보수정 버튼
         binding.btnEditInform.setOnClickListener {
             val intent = Intent(this.context, EditInformActivity::class.java)
+            startActivity(intent)
+        }
+
+        // 학생증 인증 버튼
+        binding.certification.setOnClickListener {
+            val intent = Intent(this.context, CertificationActivity::class.java)
+            startActivity(intent)
+        }
+
+        // 학생증 인증 버튼
+        binding.btnMyRoom.setOnClickListener {
+            val intent = Intent(this.context, MyRoomActivity::class.java)
             startActivity(intent)
         }
 

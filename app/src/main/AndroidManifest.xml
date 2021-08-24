@@ -22,6 +22,12 @@
         android:theme="@style/Theme.Hyu_dongzi"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".MyRoomActivity"
+            android:exported="true" />
+        <activity
+            android:name=".CertificationActivity"
+            android:exported="true" />
+        <activity
             android:name=".EditInformActivity"
             android:exported="true" />
         <!--
@@ -61,7 +67,8 @@
         <activity android:name=".RoomsActivity" />
         <activity android:name=".chatdetail.ChatRoomActivity" />
         <activity android:name=".ContractActivity" />
-        <activity android:name=".Contract2Activity"
+        <activity
+            android:name=".Contract2Activity"
             tools:ignore="Instantiatable" />
         <activity android:name=".Contract3Activity" />
         <activity android:name=".Contract4Activity" />
