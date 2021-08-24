@@ -42,14 +42,12 @@ class RoomInformationActivity : AppCompatActivity() {
         val depositTextView = findViewById<TextView>(R.id.tv_roomInformDeposit)
         val monthlyTextView = findViewById<TextView>(R.id.tv_roomInformMonthly)
         val addressTextView = findViewById<TextView>(R.id.tv_roomInformAddress)
-        val idTextView = findViewById<TextView>(R.id.tv_roomInformId)
 
         typeTextView.text = type.toString()
         floorTextView.text = floor.toString()
         depositTextView.text = deposit.toString()
         monthlyTextView.text = monthly.toString()
         addressTextView.text = address.toString()
-        idTextView.text = id.toString()
 
         val storageReference = Firebase.storage.reference.child(id + ".png")
         val image = findViewById<ImageView>(R.id.iv_roomInformImage)

@@ -34,7 +34,8 @@ class RoomListAdapter(val List: MutableList<Room>) : BaseAdapter() {
 
         val deposit = view?.findViewById<TextView>(R.id.tv_deposit)
         val monthly = view?.findViewById<TextView>(R.id.tv_monthly)
-        val uid = view?.findViewById<TextView>(R.id.tv_uid)
+        val roomType = view?.findViewById<TextView>(R.id.tv_roomType)
+        val roomFloors = view?.findViewById<TextView>(R.id.tv_roomFloors)
 
         val storageReference = Firebase.storage.reference.child(List[position].id + ".png")
         val image = view?.findViewById<ImageView>(R.id.iv_roomImage)
@@ -46,17 +47,13 @@ class RoomListAdapter(val List: MutableList<Room>) : BaseAdapter() {
                     .load(task.result)
                     .into(image!!)
 
-            } else {
-
             }
         })
 
-
-
         deposit!!.text = List[position].deposit
         monthly!!.text = List[position].monthly
-        uid!!.text = List[position].uid
-
+        roomType!!.text = List[position].type
+        roomFloors!!.text = List[position].floor
 
         return view!!
 

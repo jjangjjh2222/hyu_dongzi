@@ -24,99 +24,247 @@
 
     </FrameLayout>
 
-    <ImageView
-        android:id="@+id/iv_roomInformImage"
+    <View
         android:layout_width="match_parent"
-        android:layout_height="230dp"
-        android:layout_marginTop="12dp"
-        app:srcCompat="@drawable/ic_baseline_account_box_24" />
+        android:layout_height="1dp"
+        android:background="#E8E8E8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/frameLayout" />
 
-
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/tv_roomInformtype"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginTop="12dp"
-            android:gravity="center_vertical"
-            android:text="TextView"
-            android:textAppearance="@style/content_text" />
-
-        <TextView
-            android:id="@+id/tv_roomInformfloor"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginTop="12dp"
-            android:gravity="center_vertical"
-            android:text="TextView"
-            android:textAppearance="@style/content_text" />
-
-        <TextView
-            android:id="@+id/tv_roomInformDeposit"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginTop="12dp"
-            android:gravity="center_vertical"
-            android:text="TextView"
-            android:textAppearance="@style/content_text" />
-
-        <TextView
-            android:id="@+id/tv_roomInformMonthly"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginTop="12dp"
-            android:gravity="center_vertical"
-            android:text="TextView"
-            android:textAppearance="@style/content_text" />
-
-        <TextView
-            android:id="@+id/tv_roomInformAddress"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginTop="12dp"
-            android:gravity="center_vertical"
-            android:text="TextView"
-            android:textAppearance="@style/content_text" />
-
-        <TextView
-            android:id="@+id/tv_roomInformId"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginTop="12dp"
-            android:gravity="center_vertical"
-            android:text="TextView"
-            android:textAppearance="@style/content_text" />
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="12dp"
-            android:layout_weight="10"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
 
-            <Button
-                android:id="@+id/btn_contract"
-                android:layout_width="wrap_content"
-                android:layout_height="60dp"
-                android:layout_weight="1"
-                android:text="계약하기"
-                android:textAppearance="@style/content_text" />
+            <ImageView
+                android:id="@+id/iv_roomInformImage"
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
+                android:background="#E6E6E6" />
 
-            <Button
-                android:id="@+id/btn_chat"
-                android:layout_width="wrap_content"
-                android:layout_height="60dp"
-                android:layout_marginStart="12dp"
-                android:layout_weight="10"
-                android:text="문의하기"
-                android:textAppearance="@style/content_text" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginHorizontal="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="16sp"
+                        android:text="월세" />
+
+                    <TextView
+                        android:id="@+id/tv_roomInformMonthly"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="월세"
+                        android:textAppearance="@style/title_text" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:layout_marginStart="4dp"
+                        android:text="만원" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="16dp"
+                    android:background="#E8E8E8" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="16sp"
+                        android:text="보증금" />
+
+                    <TextView
+                        android:id="@+id/tv_roomInformDeposit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="보증금"
+                        android:textAppearance="@style/title_text" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:textSize="16sp"
+                        android:text="만원" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="16dp"
+                    android:background="#E8E8E8" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="16sp"
+                        android:text="방종류" />
+
+                    <TextView
+                        android:id="@+id/tv_roomInformtype"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="방종류"
+                        android:textAppearance="@style/title_text" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="16dp"
+                    android:background="#E8E8E8" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="16sp"
+                        android:text="층수" />
+
+                    <TextView
+                        android:id="@+id/tv_roomInformfloor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="층수"
+                        android:textAppearance="@style/title_text" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="16dp"
+                    android:background="#E8E8E8" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="주소"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/tv_roomInformAddress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="주소"
+                        android:textAppearance="@style/title_text" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="16dp"
+                    android:background="#E8E8E8" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_marginTop="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="방설명"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:textColor="@color/black"
+                        android:text="방설명입니다. 방설명입니다. 방설명입니다. 방설명입니다. 방설명입니다. 방설명입니다. 방설명입니다. 방설명입니다. 방설명입니다. 방설명입니다. 방설명입니다. 방설명입니다. 방설명입니다. "/>
+
+                </LinearLayout>
+
+
+
+
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_contract"
+                    style="@style/Widget.MaterialComponents.Button.Icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:layout_weight="1"
+                    android:text="계약하기"
+                    android:textAppearance="@style/content_text"
+                    app:icon="@drawable/ic_contract" />
+
+                <Button
+                    android:id="@+id/btn_chat"
+                    style="@style/Widget.MaterialComponents.Button.Icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="12dp"
+                    android:layout_weight="10"
+                    android:text="문의하기"
+                    android:textAppearance="@style/content_text"
+                    app:icon="@drawable/ic_message" />
+            </LinearLayout>
+
         </LinearLayout>
-    </LinearLayout>
+    </ScrollView>
 
 
 </LinearLayout>
