@@ -41,7 +41,7 @@ class ContractActivity : AppCompatActivity(){
                 }
             })
 
-        database.getReference("board").child(id!!).child("deposit")
+        database.getReference("board").child(id).child("deposit")
             .addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     val value = snapshot.value.toString()
@@ -51,11 +51,21 @@ class ContractActivity : AppCompatActivity(){
                 }
             })
 
-        database.getReference("board").child(id!!).child("monthly")
+        database.getReference("board").child(id).child("monthly")
             .addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     val value = snapshot.value.toString()
                     binding.tvMonthly.text = value
+                }
+                override fun onCancelled(error: DatabaseError) {
+                }
+            })
+
+        database.getReference("board").child(id).child("address")
+            .addValueEventListener(object : ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    val value = snapshot.value.toString()
+                    binding.tvAddress.text = value
                 }
                 override fun onCancelled(error: DatabaseError) {
                 }
