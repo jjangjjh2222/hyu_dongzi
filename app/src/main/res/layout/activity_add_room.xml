@@ -71,7 +71,7 @@
                     android:hint="방종류">
 
                     <AutoCompleteTextView
-                        android:id="@+id/tv_type"
+                        android:id="@+id/tv_roomType"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="none"
@@ -88,10 +88,10 @@
                     android:hint="층수">
 
                     <AutoCompleteTextView
-                        android:id="@+id/tv_floor"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="none" />
+                        android:inputType="none"
+                        />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -155,11 +155,10 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/et_address"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="주소"
-                    android:inputType="textPostalAddress" />
+                    android:inputType="textPostalAddress"
+                    android:hint="주소" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
