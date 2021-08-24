@@ -32,12 +32,12 @@ class AddRoomActivity : AppCompatActivity() {
         // 방종류
         val roomType = resources.getStringArray(R.array.roomType)
         val roomTypeAdapter = ArrayAdapter(this, R.layout.list_item, roomType)
-        tv_roomType.setAdapter(roomTypeAdapter)
+        tv_type.setAdapter(roomTypeAdapter)
 
         // 층수
         val roomFloors = resources.getStringArray(R.array.roomFloors)
         val roomFloorsAdapter = ArrayAdapter(this, R.layout.list_item, roomFloors)
-        tv_roomFloors.setAdapter(roomFloorsAdapter)
+        tv_floor.setAdapter(roomFloorsAdapter)
 
         btn_upload.setOnClickListener {
             val type = findViewById<EditText>(R.id.tv_type)
