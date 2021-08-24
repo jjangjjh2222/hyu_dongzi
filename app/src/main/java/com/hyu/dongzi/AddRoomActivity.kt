@@ -3,41 +3,42 @@ package com.hyu.dongzi
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.drawable.BitmapDrawable
-import android.media.Image
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.provider.MediaStore
 import android.widget.*
-import androidx.core.content.ContentProviderCompat.requireContext
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
-import com.hyu.dongzi.databinding.ActivityAddRoomBinding
 import kotlinx.android.synthetic.main.activity_add_room.*
-import org.jetbrains.anko.autoCompleteTextView
 import java.io.ByteArrayOutputStream
 
 class AddRoomActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
 
-    private lateinit var binding : ActivityAddRoomBinding
-
     val storage = Firebase.storage
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
-        binding = ActivityAddRoomBinding.inflate(layoutInflater)
-
         auth = Firebase.auth
 
         super.onCreate(savedInstanceState)
-        setContentView(binding.root)
+        setContentView(R.layout.activity_add_room)
 
-        val uploadButton = findViewById<Button>(R.id.btn_upload)
+        // 방종류
+        val roomType = resources.getStringArray(R.array.roomType)
+        val roomTypeAdapter = ArrayAdapter(this, R.layout.list_item, roomType)
+        tv_roomType.setAdapter(roomTypeAdapter)
+
+        // 층수
+        val roomFloors = resources.getStringArray(R.array.roomFloors)
+        val roomFloorsAdapter = ArrayAdapter(this, R.layout.list_item, roomFloors)
+        tv_roomFloors.setAdapter(roomFloorsAdapter)
+
         btn_upload.setOnClickListener {
 
             val deposit = findViewById<EditText>(R.id.et_deposit)
@@ -79,6 +80,14 @@ class AddRoomActivity : AppCompatActivity() {
 
     }
 
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (resultCode == RESULT_OK && requestCode == 1) {
+            findViewById<ImageView>(R.id.btn_uploadImage).setImageURI(data?.data)
+        }
+    }
+
     private fun imageUpload(key : String) {
 
         val imageView = findViewById<ImageView>(R.id.btn_uploadImage)
@@ -100,13 +109,5 @@ class AddRoomActivity : AppCompatActivity() {
 
         }
 
-    }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-
-        if (resultCode == RESULT_OK && requestCode == 1) {
-            findViewById<ImageView>(R.id.btn_uploadImage).setImageURI(data?.data)
-        }
     }
 }
