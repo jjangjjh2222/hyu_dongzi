@@ -16,7 +16,6 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
-import com.hyu.dongzi.databinding.FragmentUserBinding
 
 
 class RoomsActivity : AppCompatActivity() {
@@ -67,7 +66,7 @@ class RoomsActivity : AppCompatActivity() {
 
         adapter = RoomListAdapter(list)
 
-        val lv = findViewById<ListView>(R.id.lv_roomsList)
+        val lv = findViewById<ListView>(R.id.lv_contractList)
 
         lv.adapter = adapter
 
@@ -81,6 +80,7 @@ class RoomsActivity : AppCompatActivity() {
             intent.putExtra("deposit", selectItem.deposit)
             intent.putExtra("monthly", selectItem.monthly)
             intent.putExtra("address", selectItem.address)
+            intent.putExtra("explain", selectItem.explain)
             intent.putExtra("id", selectItem.id)
 
             startActivity(intent)

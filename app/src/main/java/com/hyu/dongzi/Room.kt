@@ -6,6 +6,7 @@ data class Room (
     val deposit: String = "보증금",
     val monthly: String = "월세",
     val address: String = "주소",
+    val explain: String = "방 설명",
     val id : String = "기본값",
     val uid : String = "uid"
 )

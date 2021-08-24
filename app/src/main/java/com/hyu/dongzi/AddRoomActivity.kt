@@ -45,6 +45,7 @@ class AddRoomActivity : AppCompatActivity() {
             val deposit = findViewById<EditText>(R.id.et_deposit)
             val monthly = findViewById<EditText>(R.id.et_monthly)
             val address = findViewById<EditText>(R.id.et_address)
+            val explain = findViewById<EditText>(R.id.et_plain)
 
             val database = Firebase.database
             val myRef = database.getReference("board")
@@ -61,6 +62,7 @@ class AddRoomActivity : AppCompatActivity() {
                     deposit.text.toString(),
                     monthly.text.toString(),
                     address.text.toString(),
+                    explain.text.toString(),
                     key,
                     uid.toString())
             )

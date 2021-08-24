@@ -46,7 +46,7 @@
         app:layout_constraintTop_toBottomOf="@id/frameLayout" />
 
     <ListView
-        android:id="@+id/lv_roomsList"
+        android:id="@+id/lv_contractList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="60dp"
