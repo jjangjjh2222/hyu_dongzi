@@ -4,33 +4,29 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:id="@+id/toolbayLayout"
-        android:layout_width="0dp"
-        android:layout_height="?attr/actionBarSize"
-        android:gravity="center_vertical"
-        app:layout_constraintEnd_toEndOf="parent"
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16.18dp"
-            android:text="채팅방 리스트"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="20dp"
+            android:text="채팅 목록"
+            android:textAppearance="@style/title_text" />
 
-    </androidx.appcompat.widget.LinearLayoutCompat>
+    </FrameLayout>
 
     <View
-        android:layout_width="0dp"
-        android:layout_height="1dp"
-        android:background="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#E8E8E8"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbayLayout" />
+        app:layout_constraintTop_toBottomOf="@id/frameLayout" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/chatListRecyclerView"
@@ -39,6 +35,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbayLayout" />
+        app:layout_constraintTop_toBottomOf="@id/frameLayout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

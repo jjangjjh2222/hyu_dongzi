@@ -6,6 +6,30 @@
     android:layout_height="match_parent"
     tools:context=".EditInformActivity">
 
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="20dp"
+            android:text="내 정보 수정"
+            android:textAppearance="@style/title_text" />
+
+    </FrameLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#E8E8E8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/frameLayout" />
+
     <EditText
         android:id="@+id/et_editName"
         android:layout_width="wrap_content"
@@ -14,8 +38,9 @@
         android:hint="수정할 이름 입력"
         android:inputType="textPersonName"
         android:minHeight="48dp"
+        android:layout_marginTop="32dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/frameLayout" />
 
     <Button
         android:id="@+id/btn_editName"
@@ -24,7 +49,7 @@
         android:text="수정"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/et_editName"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@id/et_editName" />
 
     <EditText
         android:id="@+id/et_editUniv"
