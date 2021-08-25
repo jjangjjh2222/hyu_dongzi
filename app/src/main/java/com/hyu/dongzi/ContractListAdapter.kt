@@ -41,28 +41,14 @@ class ContractListAdapter(private val List: MutableList<Contract>) : BaseAdapter
             view = LayoutInflater.from(parent?.context).inflate(R.layout.contract_item, parent, false)
         }
 
-
         val sellerName = view?.findViewById<TextView>(R.id.tv_sellerName)
         val address = view?.findViewById<TextView>(R.id.tv_contractAddress)
         val buyerName = view?.findViewById<TextView>(R.id.tv_buyerName)
 
+        sellerName?.text = List[position].sellerName
+        address?.text = List[position].address
+        buyerName?.text = List[position].buyerName
 
-        // 사용자 이름 받아오기
-        database.getReference("users").child(uid).child("name")
-            .addValueEventListener(object :ValueEventListener{
-                override fun onCancelled(error: DatabaseError) {}
-                override fun onDataChange(snapshot: DataSnapshot) {
-                    val name = snapshot.value.toString()
-
-                    if (name == List[position].buyerName || name == List[position].sellerName) {
-
-                        sellerName?.text = List[position].sellerName
-                        address?.text = List[position].address
-                        buyerName?.text = List[position].buyerName
-
-                    }
-                }
-            })
 
         return view!!
 

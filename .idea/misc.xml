@@ -27,7 +27,7 @@
         <entry key="app/src/main/res/layout/activity_savecontract.xml" value="0.25" />
         <entry key="app/src/main/res/layout/add_room.xml" value="0.2907692307692308" />
         <entry key="app/src/main/res/layout/chatroom.xml" value="0.2441123188405797" />
-        <entry key="app/src/main/res/layout/contract_item.xml" value="0.2574074074074074" />
+        <entry key="app/src/main/res/layout/contract_item.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_Chat.xml" value="0.16802536231884058" />
         <entry key="app/src/main/res/layout/fragment_Detail.xml" value="0.16802536231884058" />
         <entry key="app/src/main/res/layout/fragment_chat.xml" value="0.16802536231884058" />

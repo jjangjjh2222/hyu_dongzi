@@ -18,6 +18,7 @@ class SaveContractActivity : AppCompatActivity(){
 
     private lateinit var adapter : ContractListAdapter
     private val list = mutableListOf<Contract>()
+    val l = arrayListOf<Boolean>()
 
     val database = Firebase.database
     var auth = Firebase.auth
@@ -29,11 +30,13 @@ class SaveContractActivity : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_savecontract)
 
+
+        getData()
+
+
         val lv = findViewById<ListView>(R.id.lv_contractList)
         adapter = ContractListAdapter(list)
         lv.adapter = adapter
-
-        getData()
 
     }
 
@@ -47,6 +50,7 @@ class SaveContractActivity : AppCompatActivity(){
                 for (dataModel in dataSnapshot.children) {
 
                     val item = dataModel.getValue(Contract::class.java)
+
                     list.add(item!!)
 
                 }
