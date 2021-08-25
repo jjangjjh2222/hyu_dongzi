@@ -56,5 +56,36 @@ class RegNextActivity : AppCompatActivity() {
 
         }
 
+        btn_regVerify.setOnClickListener {
+
+            val email = findViewById<EditText>(R.id.et_regEmail)
+            val password = findViewById<EditText>(R.id.et_regPassword)
+            val database = Firebase.database
+            val myRef = database.getReference("users")
+            val name = findViewById<EditText>(R.id.et_name)
+            val university = findViewById<EditText>(R.id.et_university)
+
+            auth.createUserWithEmailAndPassword(email.text.toString(), password.text.toString())
+                .addOnCompleteListener(this) { task ->
+                    if (task.isSuccessful) {
+
+                        val uid = auth.currentUser?.uid.toString()
+
+                        myRef.child(uid).setValue(
+                            UserProfile(name.text.toString(),  university.text.toString())
+                        )
+
+                        val intent = Intent(this, CertificationActivity::class.java)
+                        startActivity(intent)
+
+                    } else {
+
+                        Toast.makeText(this, "회원가입 실패", Toast.LENGTH_SHORT).show()
+
+                    }
+                }
+
+        }
+
     }
 }

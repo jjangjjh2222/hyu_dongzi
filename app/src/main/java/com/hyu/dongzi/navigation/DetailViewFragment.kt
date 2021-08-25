@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import android.content.Intent
+import android.widget.Toast
 import com.hyu.dongzi.RoomsActivity
 import com.hyu.dongzi.databinding.FragmentDetailBinding
 
@@ -21,6 +22,18 @@ class DetailViewFragment : Fragment() {
         binding.btnRoom.setOnClickListener {
             val intent = Intent(this.context, RoomsActivity::class.java)
             startActivity(intent)
+        }
+
+        binding.button2.setOnClickListener {
+            Toast.makeText(this.context, "업데이트 예정입니다", Toast.LENGTH_SHORT).show()
+        }
+
+        binding.button3.setOnClickListener {
+            Toast.makeText(this.context, "업데이트 예정입니다", Toast.LENGTH_SHORT).show()
+        }
+
+        binding.button4.setOnClickListener {
+            Toast.makeText(this.context, "업데이트 예정입니다", Toast.LENGTH_SHORT).show()
         }
 
         return binding.root

@@ -89,6 +89,31 @@ class UserFragment : Fragment() {
             }
         })
 
+        // 사용자 학교 받아오기
+        database.getReference("users").child(uid).child("university")
+            .addValueEventListener(object :ValueEventListener{
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    val value = snapshot.value.toString()
+                    binding.textView3.text = value
+                }
+                override fun onCancelled(error: DatabaseError) {
+                }
+            })
+
+        // 사용자 인증 여부 받아오기
+        database.getReference("users").child(uid).child("isVerified")
+            .addValueEventListener(object :ValueEventListener{
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    if (snapshot.value == true) {
+
+                        binding.ivVerified.visibility = View.VISIBLE
+
+                    }
+                }
+                override fun onCancelled(error: DatabaseError) {
+                }
+            })
+
         return binding.root
     }
 }

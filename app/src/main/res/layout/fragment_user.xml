@@ -173,6 +173,13 @@
                     android:textAppearance="@style/content_text" />
 
                 <ImageView
+                    android:id="@+id/iv_verified"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_verified"
+                    android:visibility="invisible"/>
+
+                <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_right" />
