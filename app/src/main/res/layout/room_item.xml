@@ -39,8 +39,8 @@
                 android:id="@+id/tv_deposit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="12dp"
                 android:text="보증금"
                 android:textAppearance="@style/title_text"
                 android:textSize="20dp"
@@ -48,10 +48,21 @@
                 app:layout_constraintTop_toBottomOf="@+id/iv_roomImage" />
 
             <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="/"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_deposit"
+                app:layout_constraintEnd_toStartOf="@+id/tv_monthly"
+                app:layout_constraintStart_toEndOf="@+id/tv_deposit"
+                app:layout_constraintTop_toTopOf="@+id/tv_deposit" />
+
+            <TextView
                 android:id="@+id/tv_monthly"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
+                android:layout_marginStart="16dp"
                 android:text="월세"
                 android:textAppearance="@style/title_text"
                 android:textSize="20dp"
@@ -62,35 +73,35 @@
                 android:id="@+id/tv_roomType"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginBottom="8dp"
                 android:layout_weight="1"
                 android:text="원룸"
                 android:textAppearance="@style/content_text"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/tv_roomFloors"
+                app:layout_constraintStart_toStartOf="@+id/tv_deposit"
+                app:layout_constraintTop_toBottomOf="@+id/tv_deposit" />
 
             <TextView
                 android:id="@+id/tv_roomFloors"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginBottom="8dp"
+                android:layout_marginBottom="12dp"
                 android:layout_weight="1"
                 android:text="1층"
                 android:textAppearance="@style/content_text"
+                android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/tv_roomType" />
+                app:layout_constraintStart_toStartOf="@+id/tv_deposit" />
 
             <ImageView
                 android:id="@+id/iv_verifiedItem"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
+                android:layout_marginEnd="12dp"
+                android:layout_marginBottom="12dp"
                 android:visibility="invisible"
-                app:layout_constraintBottom_toBottomOf="@+id/tv_monthly"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/tv_monthly"
                 app:srcCompat="@drawable/ic_verified" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
