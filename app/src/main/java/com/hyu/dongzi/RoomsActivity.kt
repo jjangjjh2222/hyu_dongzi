@@ -8,6 +8,9 @@ import android.widget.AdapterView
 import android.widget.ImageView
 import android.widget.ListView
 import android.widget.TextView
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -20,9 +23,7 @@ import com.google.firebase.ktx.Firebase
 
 class RoomsActivity : AppCompatActivity() {
 
-    lateinit var adapter : RoomListAdapter
-
-    val list = mutableListOf<Room>()
+    val list = arrayListOf<Room>()
 
     private lateinit var auth: FirebaseAuth
 
@@ -33,6 +34,8 @@ class RoomsActivity : AppCompatActivity() {
         val uid = auth.currentUser?.uid.toString()
 
         val database = Firebase.database
+
+        val adapter = MyAdapter(list)
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_rooms)
@@ -64,34 +67,15 @@ class RoomsActivity : AppCompatActivity() {
         }
 
 
-        adapter = RoomListAdapter(list)
 
-        val lv = findViewById<ListView>(R.id.lv_contractList)
+        val rv = findViewById<RecyclerView>(R.id.lv_contractList)
 
-        lv.adapter = adapter
+        rv.layoutManager = GridLayoutManager(this, 2, LinearLayoutManager.VERTICAL, false)
 
-        // 방 클릭시 방 정보로 이동
-        lv.onItemClickListener = AdapterView.OnItemClickListener{ parent, view, position, id ->
+        rv.setHasFixedSize(true)
 
-            val selectItem = parent.getItemAtPosition(position) as Room
-            val intent = Intent(this, RoomInformationActivity::class.java)
-            intent.putExtra("type", selectItem.type)
-            intent.putExtra("floor", selectItem.floor)
-            intent.putExtra("deposit", selectItem.deposit)
-            intent.putExtra("monthly", selectItem.monthly)
-            intent.putExtra("address", selectItem.address)
-            intent.putExtra("explain", selectItem.explain)
-            intent.putExtra("id", selectItem.id)
+        rv.adapter = MyAdapter(list)
 
-            startActivity(intent)
-
-        }
-        // 방 목록 만들기
-        getData()
-    }
-
-    fun getData() {
-        val database = Firebase.database
         val myRef = database.getReference("board")
 
         val postListener = object : ValueEventListener {
@@ -113,3 +97,22 @@ class RoomsActivity : AppCompatActivity() {
         myRef.addValueEventListener(postListener)
     }
 }
+
+//        lv.adapter = adapter
+//
+//         방 클릭시 방 정보로 이동
+//        lv.onItemClickListener = AdapterView.OnItemClickListener{ parent, view, position, id ->
+//
+//            val selectItem = parent.getItemAtPosition(position) as Room
+//            val intent = Intent(this, RoomInformationActivity::class.java)
+//            intent.putExtra("type", selectItem.type)
+//            intent.putExtra("floor", selectItem.floor)
+//            intent.putExtra("deposit", selectItem.deposit)
+//            intent.putExtra("monthly", selectItem.monthly)
+//            intent.putExtra("address", selectItem.address)
+//            intent.putExtra("explain", selectItem.explain)
+//            intent.putExtra("id", selectItem.id)
+//
+//            startActivity(intent)
+//
+//        }
