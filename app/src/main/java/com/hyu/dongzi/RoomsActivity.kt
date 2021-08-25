@@ -86,7 +86,6 @@ class RoomsActivity : AppCompatActivity() {
             startActivity(intent)
 
         }
-
         // 방 목록 만들기
         getData()
     }

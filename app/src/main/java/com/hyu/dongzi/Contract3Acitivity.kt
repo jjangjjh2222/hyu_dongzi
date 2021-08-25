@@ -24,6 +24,8 @@ class Contract3Activity : AppCompatActivity() {
         setContentView(binding.root) //xml 화면 뷰를 연결한다.
         val id = intent.getStringExtra("id")
 
+        val uid = auth.currentUser?.uid.toString()
+
         btn_write.setOnClickListener {
             val intent = Intent(this, Contract4Activity::class.java)
             intent.putExtra("id", id)
