@@ -10,6 +10,7 @@ import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
 import com.hyu.dongzi.ChatList.ChatListAdapter
@@ -20,13 +21,9 @@ import kotlinx.android.synthetic.main.item_chatlist.*
 import kotlinx.android.synthetic.main.room_item.*
 
 class RoomInformationActivity : AppCompatActivity() {
-    private lateinit var userDB: DatabaseReference
-    lateinit var chatListAdapter: ChatListAdapter
-    private val auth: FirebaseAuth by lazy {
-        Firebase.auth
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_room_information)
 
@@ -62,10 +59,9 @@ class RoomInformationActivity : AppCompatActivity() {
                     .load(task.result)
                     .into(image!!)
 
-            } else {
-
             }
         })
+
         btn_chat.setOnClickListener {
             val intent = Intent(this, ChatRoomActivity::class.java)
             startActivity(intent)

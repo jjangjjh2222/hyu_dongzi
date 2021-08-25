@@ -39,7 +39,9 @@ class AddRoomActivity : AppCompatActivity() {
         val roomFloorsAdapter = ArrayAdapter(this, R.layout.list_item, roomFloors)
         tv_floor.setAdapter(roomFloorsAdapter)
 
+        // 방등록 버튼
         btn_upload.setOnClickListener {
+
             val type = findViewById<EditText>(R.id.tv_type)
             val floor = findViewById<EditText>(R.id.tv_floor)
             val deposit = findViewById<EditText>(R.id.et_deposit)
@@ -72,8 +74,6 @@ class AddRoomActivity : AppCompatActivity() {
             imageUpload(key)
 
             Handler().postDelayed({startActivity(intent)},2000)
-
-
 
         }
 

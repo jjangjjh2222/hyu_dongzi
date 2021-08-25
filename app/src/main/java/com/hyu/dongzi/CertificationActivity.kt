@@ -15,7 +15,7 @@ class CertificationActivity : AppCompatActivity() {
     var auth = Firebase.auth
     val uid = auth.currentUser?.uid.toString()
     val database = Firebase.database
-    val myRef = database.getReference("users").child(uid).child("isVerified")
+    private val myRef = database.getReference("users").child(uid).child("isVerified")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

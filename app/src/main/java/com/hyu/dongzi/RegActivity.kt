@@ -9,6 +9,7 @@ import kotlinx.android.synthetic.main.activity_reg.*
 class RegActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_reg)
 
@@ -16,5 +17,7 @@ class RegActivity : AppCompatActivity() {
             val intent = Intent(this, RegNextActivity::class.java )
             startActivity(intent)
         }
+
     }
+
 }

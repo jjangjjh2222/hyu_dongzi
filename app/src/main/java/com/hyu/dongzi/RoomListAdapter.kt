@@ -18,6 +18,7 @@ import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
 
 class RoomListAdapter(val List: MutableList<Room>) : BaseAdapter() {
+
     override fun getCount(): Int {
         return List.count()
     }
@@ -81,4 +82,5 @@ class RoomListAdapter(val List: MutableList<Room>) : BaseAdapter() {
         return view!!
 
     }
+
 }

@@ -13,23 +13,26 @@ import kotlinx.android.synthetic.main.activity_home.*
 
 class HomeActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener {
     override fun onNavigationItemSelected(p0: MenuItem): Boolean {
+
         when(p0.itemId) {
+
             R.id.action_home ->{
                 val detailViewFragment = DetailViewFragment()
                 supportFragmentManager.beginTransaction().replace(R.id.main_content, detailViewFragment).commit()
                 return true
             }
+
             R.id.action_chat ->{
                 val chatFragment = ChatListFragment()
                 supportFragmentManager.beginTransaction().replace(R.id.main_content, chatFragment).commit()
                 return true
             }
+
             R.id.action_my ->{
                 val userFragment = UserFragment()
                 supportFragmentManager.beginTransaction().replace(R.id.main_content, userFragment).commit()
                 return true
             }
-
 
         }
         return false
