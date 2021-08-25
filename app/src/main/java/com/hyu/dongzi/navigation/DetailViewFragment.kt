@@ -36,6 +36,10 @@ class DetailViewFragment : Fragment() {
             Toast.makeText(this.context, "서비스 예정입니다", Toast.LENGTH_SHORT).show()
         }
 
+        binding.button5.setOnClickListener {
+            Toast.makeText(this.context, "서비스 예정입니다", Toast.LENGTH_SHORT).show()
+        }
+
         return binding.root
     }
 }

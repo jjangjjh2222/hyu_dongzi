@@ -13,6 +13,20 @@ class RegActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_reg)
 
+        checkBox.setOnClickListener {
+
+            if (checkBox.isChecked) {
+                checkBox2.isChecked = true
+                checkBox3.isChecked = true
+                checkBox4.isChecked = true
+            } else {
+                checkBox2.isChecked = false
+                checkBox3.isChecked = false
+                checkBox4.isChecked = false
+            }
+
+        }
+
         btn_write.setOnClickListener {
             val intent = Intent(this, RegNextActivity::class.java )
             startActivity(intent)
