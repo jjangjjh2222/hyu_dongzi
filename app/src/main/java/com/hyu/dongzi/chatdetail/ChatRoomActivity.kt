@@ -74,8 +74,8 @@ class ChatRoomActivity : AppCompatActivity() {
     }
 
     private fun initChatListRecyclerView() {
-        binding.chatListRecyclerView.adapter = adapter
-        binding.chatListRecyclerView.layoutManager = LinearLayoutManager(this)
+        binding.lvChatlist.adapter = adapter
+        binding.lvChatlist.layoutManager = LinearLayoutManager(this)
     }
 
     private fun initSendButton() {

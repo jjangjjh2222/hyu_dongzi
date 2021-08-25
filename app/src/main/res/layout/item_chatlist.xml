@@ -6,7 +6,7 @@
     android:layout_height="wrap_content">
 
     <TextView
-        android:id="@+id/chatRoomTitleTextView"
+        android:id="@+id/sellerId"
         android:textSize="20sp"
         android:textColor="@color/black"
         tools:text="DEMO TEXT"

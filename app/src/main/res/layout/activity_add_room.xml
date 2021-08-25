@@ -190,11 +190,17 @@
                     android:hint="방설명" />
             </com.google.android.material.textfield.TextInputLayout>
 
+            <CheckBox
+                android:layout_margin="17dp"
+                android:id="@+id/checkBox6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="임대인의 동의를 구한 후에 방을 내놓습니다." />
+
             <Button
                 android:id="@+id/btn_upload"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_marginTop="16dp"
                 android:text="등록하기"
                 android:textAppearance="@style/content_text" />
 

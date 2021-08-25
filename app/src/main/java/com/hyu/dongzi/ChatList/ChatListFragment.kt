@@ -1,11 +1,13 @@
 package com.hyu.dongzi.ChatList
 
-import android.annotation.SuppressLint
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
+import android.widget.AdapterView
+import android.widget.ListView
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DataSnapshot
@@ -14,9 +16,10 @@ import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.hyu.dongzi.R
-import com.hyu.dongzi.DBKey.Companion.CHILD_CHAT
-import com.hyu.dongzi.DBKey.Companion.DB_USERS
+import com.hyu.dongzi.Room
+import com.hyu.dongzi.chatdetail.ChatRoomActivity
 import com.hyu.dongzi.databinding.FragmentChatBinding
+import kotlinx.android.synthetic.*
 
 class ChatListFragment : Fragment(R.layout.fragment_chat) {
 
@@ -35,61 +38,47 @@ class ChatListFragment : Fragment(R.layout.fragment_chat) {
 
         binding = fragmentChatBinding
 
-        initchartListAdapter()
 
         chatRoomList.clear()
 
-        initChartRecyclerView()
+        chatListAdapter = ChatListAdapter(chatRoomList)
 
-        initChatDB()
+        val lv = binding.lvChatlist
+
+
+        lv.adapter = chatListAdapter
+
+        // 방 클릭시 방 정보로 이동
+        lv.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id ->
+
+            val intent = Intent(this.context, ChatRoomActivity::class.java)
+
+            startActivity(intent)
+        }
+
+        getData()
+
     }
+    fun getData() {
+        val database = Firebase.database
+        val myRef = database.getReference("chatlist")
 
-    private fun initchartListAdapter() {
-        chatListAdapter = ChatListAdapter(onItemClicked = { chatRoom ->
-            context?.let {
-//                val intent = Intent(it, ChatRoomActivity::class.java)
-//                intent.putExtra("chatKey", chatRoom.key) // 인텐트로 키를 전달해서 start
-//                startActivity(intent)
-            }
+        val postListener = object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
 
-        })
-    }
+                for (dataModel in dataSnapshot.children) {
 
-    private fun initChartRecyclerView() {
-        binding.chatListRecyclerView.adapter = chatListAdapter
-        binding.chatListRecyclerView.layoutManager = LinearLayoutManager(context)
-    }
+                    val item = dataModel.getValue(ChatListItem::class.java)
+                    chatRoomList.add(item!!)
 
-    private fun initChatDB() {
-        val firebaseUser = auth.currentUser ?: return
-
-        val chatDB =
-            Firebase.database.reference.child(DB_USERS).child(firebaseUser.uid).child(CHILD_CHAT)
-
-        // db에 있는 채팅 리스트를 불러와 각각 리스트에 더해준다.
-        chatDB.addListenerForSingleValueEvent(object : ValueEventListener {
-            @SuppressLint("NotifyDataSetChanged")
-            override fun onDataChange(snapshot: DataSnapshot) {
-                snapshot.children.forEach {
-                    val model = it.getValue(ChatListItem::class.java)
-                    model ?: return
-                    chatRoomList.add(model)
                 }
-                chatListAdapter.submitList(chatRoomList)
                 chatListAdapter.notifyDataSetChanged()
             }
 
-            override fun onCancelled(error: DatabaseError) {}
-
-        })
+            override fun onCancelled(databaseError: DatabaseError) {
+                Log.w("ChatListFragment", "loadPost:onCancelled", databaseError.toException())
+            }
+        }
+        myRef.addValueEventListener(postListener)
     }
-
-    // view가 새로 그려졌을 때;
-    @SuppressLint("NotifyDataSetChanged")
-    override fun onResume() {
-        super.onResume()
-
-        chatListAdapter.notifyDataSetChanged()
-    }
-
 }
