@@ -63,7 +63,7 @@
                         android:text="방 둘러보기"
                         android:textAppearance="@style/title_text"
                         android:textColor="@color/blue_dark"
-                        android:textSize="28sp"
+                        android:textSize="26sp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -80,7 +80,7 @@
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="24dp"
-                        android:layout_marginTop="16dp"
+                        android:layout_marginTop="12dp"
                         android:text="학교 근처 방 둘러보기 내 방 등록하기"
                         android:textSize="16sp"
                         app:layout_constraintStart_toStartOf="parent"
@@ -144,7 +144,7 @@
                             android:layout_marginStart="16dp"
                             android:layout_marginTop="8dp"
                             android:text="가구대여 서비스"
-                            android:textSize="12sp"
+                            android:textSize="14sp"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/tv_2" />
 
@@ -196,7 +196,7 @@
                             android:layout_marginStart="16dp"
                             android:layout_marginTop="8dp"
                             android:text="짐 맡기기 서비스"
-                            android:textSize="12sp"
+                            android:textSize="14sp"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/tv_4" />
 
@@ -261,8 +261,8 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="16dp"
                             android:layout_marginTop="8dp"
-                            android:text="제휴 회사의 청소대행 서비스"
-                            android:textSize="12sp"
+                            android:text="청소대행 서비스"
+                            android:textSize="14sp"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/tv_3" />
 
@@ -293,7 +293,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="16dp"
                             android:layout_marginTop="16dp"
-                            android:text="장터"
+                            android:text="중고장터"
                             android:textAppearance="@style/title_text"
                             android:textColor="@color/blue_dark"
                             android:textSize="20sp"
@@ -314,8 +314,8 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="16dp"
                             android:layout_marginTop="8dp"
-                            android:text="중고 장터 서비스"
-                            android:textSize="12sp"
+                            android:text="중고장터 서비스"
+                            android:textSize="14sp"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/tv_5" />
 
