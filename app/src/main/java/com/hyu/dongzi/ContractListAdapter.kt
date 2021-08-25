@@ -36,15 +36,16 @@ class ContractListAdapter(private val List: MutableList<Contract>) : BaseAdapter
 
         val uid = auth.currentUser?.uid.toString()
 
-        var name : String
+
+        if (view == null) {
+            view = LayoutInflater.from(parent?.context).inflate(R.layout.contract_item, parent, false)
+        }
+
 
         val sellerName = view?.findViewById<TextView>(R.id.tv_sellerName)
         val address = view?.findViewById<TextView>(R.id.tv_contractAddress)
         val buyerName = view?.findViewById<TextView>(R.id.tv_buyerName)
 
-        if (view == null) {
-            view = LayoutInflater.from(parent?.context).inflate(R.layout.contract_item, parent, false)
-        }
 
         // 사용자 이름 받아오기
         database.getReference("users").child(uid).child("name")
