@@ -12,9 +12,10 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- GPS센서를 이용해서 위치를 파악합니다. -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- 인터넷 권한 요청 -->
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-feature android:name="android.hardware.camera" android:required="true"/>
 
     <application
         android:allowBackup="true"
@@ -77,6 +78,21 @@
         <activity android:name=".Contract4Activity" />
         <activity android:name=".Contract5Activity" />
         <activity android:name=".SaveContractActivity" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.example.textbutton.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths">
+
+            </meta-data>
+
+        </provider>
+
     </application>
 
 </manifest>
