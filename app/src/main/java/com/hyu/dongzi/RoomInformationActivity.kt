@@ -14,11 +14,13 @@ import com.google.firebase.storage.ktx.storage
 import com.hyu.dongzi.ChatList.ChatListItem
 import com.hyu.dongzi.chatdetail.ChatRoomActivity
 import kotlinx.android.synthetic.main.activity_room_information.*
-import kotlinx.android.synthetic.main.item_chatlist.*
+
 
 class RoomInformationActivity : AppCompatActivity() {
+
     private lateinit var auth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
+
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_room_information)
@@ -79,6 +81,7 @@ class RoomInformationActivity : AppCompatActivity() {
                 ChatListItem(
 
                     sellerId = id!!
+
 
                 )
             )
