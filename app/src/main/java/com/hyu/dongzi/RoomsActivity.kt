@@ -25,6 +25,8 @@ class RoomsActivity : AppCompatActivity() {
 
     val list = arrayListOf<Room>()
 
+    val adapter = MyAdapter(list)
+
     private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,11 +37,8 @@ class RoomsActivity : AppCompatActivity() {
 
         val database = Firebase.database
 
-        val adapter = MyAdapter(list)
-
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_rooms)
-
 
         // 사용자 학교 받아오기
         database.getReference("users").child(uid).child("university")
@@ -66,16 +65,6 @@ class RoomsActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-
-
-        val rv = findViewById<RecyclerView>(R.id.lv_contractList)
-
-        rv.layoutManager = GridLayoutManager(this, 2, LinearLayoutManager.VERTICAL, false)
-
-        rv.setHasFixedSize(true)
-
-        rv.adapter = MyAdapter(list)
-
         val myRef = database.getReference("board")
 
         val postListener = object : ValueEventListener {
@@ -87,7 +76,9 @@ class RoomsActivity : AppCompatActivity() {
                     list.add(item!!)
 
                 }
+
                 adapter.notifyDataSetChanged()
+
             }
 
             override fun onCancelled(databaseError: DatabaseError) {
@@ -95,8 +86,38 @@ class RoomsActivity : AppCompatActivity() {
             }
         }
         myRef.addValueEventListener(postListener)
+
+
+
+        val rv = findViewById<RecyclerView>(R.id.lv_contractList)
+
+        rv.layoutManager = GridLayoutManager(this, 2, LinearLayoutManager.VERTICAL, false)
+
+        rv.adapter = adapter
+
     }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //        lv.adapter = adapter
 //
