@@ -25,15 +25,15 @@ class DetailViewFragment : Fragment() {
         }
 
         binding.button2.setOnClickListener {
-            Toast.makeText(this.context, "업데이트 예정입니다", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this.context, "서비스 예정입니다", Toast.LENGTH_SHORT).show()
         }
 
         binding.button3.setOnClickListener {
-            Toast.makeText(this.context, "업데이트 예정입니다", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this.context, "서비스 예정입니다", Toast.LENGTH_SHORT).show()
         }
 
         binding.button4.setOnClickListener {
-            Toast.makeText(this.context, "업데이트 예정입니다", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this.context, "서비스 예정입니다", Toast.LENGTH_SHORT).show()
         }
 
         return binding.root

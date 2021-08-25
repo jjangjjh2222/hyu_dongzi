@@ -39,12 +39,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frameLayout"
+        app:layout_constraintBottom_toTopOf="@id/btn_verify"
         android:layout_marginHorizontal="20dp">
 
         <TextView
             android:id="@+id/textView9"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:text="사진 등록"
             android:textAppearance="@style/content_text" />
 
@@ -60,17 +62,17 @@
             android:focusable="true"
             android:scaleType="centerCrop"/>
 
-        <Button
-            android:id="@+id/btn_verify"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:text="인증하기"
-            android:layout_marginTop="16dp"
-            android:textAppearance="@style/content_text"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_verify"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="인증하기"
+        android:layout_margin="20dp"
+        android:textAppearance="@style/content_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

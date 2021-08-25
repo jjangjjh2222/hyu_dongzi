@@ -94,7 +94,6 @@ class CertificationActivity : AppCompatActivity() {
     private fun setPermission() {
         val permission = object : PermissionListener {
             override fun onPermissionGranted() {
-                Toast.makeText(this@CertificationActivity, "권한이 허용되었습니다", Toast.LENGTH_SHORT).show()
             }
 
             override fun onPermissionDenied(deniedPermissions: MutableList<String>?) {

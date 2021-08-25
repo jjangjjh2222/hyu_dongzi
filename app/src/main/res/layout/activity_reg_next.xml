@@ -29,140 +29,137 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/frameLayout"/>
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:orientation="vertical"
-        android:padding="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_join"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/frameLayout">
+        app:layout_constraintTop_toBottomOf="@id/frameLayout"
+        app:layout_constraintBottom_toBottomOf="parent">
 
-        <TextView
-            android:id="@+id/tv_email"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/tv_email"
-            android:textAppearance="@style/title_text" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tf_email"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:hint="@string/tf_email_text">
+            android:orientation="vertical"
+            android:padding="20dp">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/et_regEmail"
+            <TextView
+                android:id="@+id/tv_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/tv_email"
+                android:textAppearance="@style/title_text" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tf_email"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
-                tools:ignore="TextContrastCheck" />
+                android:layout_marginTop="8dp"
+                android:hint="@string/tf_email_text">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_regEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress"
+                    tools:ignore="TextContrastCheck" />
 
 
-        </com.google.android.material.textfield.TextInputLayout>
+            </com.google.android.material.textfield.TextInputLayout>
 
-        <TextView
-            android:id="@+id/tv_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:text="@string/tv_name_text"
-            android:textAppearance="@style/title_text" />
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/tv_name_text"
+                android:textAppearance="@style/title_text" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/t_name"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:hint="@string/tf_name_text">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/et_name"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/t_name"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                tools:ignore="TextContrastCheck" />
+                android:layout_marginTop="8dp"
+                android:hint="@string/tf_name_text">
 
-        </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    tools:ignore="TextContrastCheck" />
 
-        <TextView
-            android:id="@+id/tv_password"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:text="@string/tv_password_text"
-            android:textAppearance="@style/title_text" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tf_password"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:hint="@string/tf_password_text">
+            <TextView
+                android:id="@+id/tv_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/tv_password_text"
+                android:textAppearance="@style/title_text" />
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/et_regPassword"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tf_password"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPassword"
-                tools:ignore="TextContrastCheck" />
+                android:layout_marginTop="8dp"
+                android:hint="@string/tf_password_text">
 
-        </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_regPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    tools:ignore="TextContrastCheck" />
 
-        <TextView
-            android:id="@+id/tv_university"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:text="학교를 입력해주세요."
-            android:textAppearance="@style/title_text" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tv_universityddd"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:hint="학교 입력">
+            <TextView
+                android:id="@+id/tv_university"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="학교를 입력해주세요."
+                android:textAppearance="@style/title_text" />
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/et_university"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tv_universityddd"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                tools:ignore="TextContrastCheck" />
+                android:layout_marginTop="8dp"
+                android:hint="학교 입력">
 
-        </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_university"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    tools:ignore="TextContrastCheck" />
 
-    </LinearLayout>
+            </com.google.android.material.textfield.TextInputLayout>
 
-    <Button
-        android:id="@+id/btn_regVerify"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:text="학생증 인증하기"
-        android:textStyle="bold"
-        android:layout_marginHorizontal="20dp"
-        app:layout_constraintBottom_toTopOf="@id/btn_join"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+            <Button
+                android:id="@+id/btn_regVerify"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="학생증 인증하기"
+                android:textStyle="bold"
+                android:layout_marginTop="24dp"/>
 
-    <Button
-        android:id="@+id/btn_join"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:text="인증 없이 시작하기"
-        android:backgroundTint="#C6C6C6"
-        android:textStyle="bold"
-        android:layout_margin="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+            <Button
+                android:id="@+id/btn_join"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:backgroundTint="#C6C6C6"
+                android:layout_marginTop="4dp"
+                android:text="인증 없이 시작하기"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
