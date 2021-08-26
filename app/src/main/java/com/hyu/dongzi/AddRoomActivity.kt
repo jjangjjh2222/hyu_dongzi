@@ -52,7 +52,7 @@ class AddRoomActivity : AppCompatActivity() {
             val database = Firebase.database
             val myRef = database.getReference("board")
 
-            val intent = Intent(this, RoomsActivity::class.java)
+            val intent = Intent(this, MainActivity::class.java)
 
             val key = myRef.push().key.toString()
 
