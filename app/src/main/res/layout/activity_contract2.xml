@@ -50,32 +50,48 @@
                 android:textAppearance="@style/title_text" />
 
             <CheckBox
+                android:id="@+id/checkBox7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="80dp"
+                android:text="전체동의" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#E8E8E8"
+                android:layout_marginVertical="16dp"
+                android:layout_marginHorizontal="6dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/frameLayout" />
+
+            <CheckBox
                 android:id="@+id/checkBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="152dp"
-                android:text="입력하는 서명의 법적 효력에 대해 동의합니다." />
+                android:text="입력하는 서명의 법적 효력에 대해 동의합니다. (필수)" />
 
             <CheckBox
                 android:id="@+id/checkBox2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="서명완료 후 블록체인에 저장되는 문서를 원본으로 인정합니다." />
+                android:layout_marginTop="16dp"
+                android:text="서명완료 후 블록체인에 저장되는 문서를 원본으로 인정합니다. (필수)" />
 
             <CheckBox
                 android:id="@+id/checkBox3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="모든 서명 참여자가 서명 입력에 정당한 권한을 가지는 것을 확인하였습니다." />
+                android:layout_marginTop="16dp"
+                android:text="모든 서명 참여자가 서명 입력에 정당한 권한을 가지는 것을 확인하였습니다. (필수)" />
 
             <CheckBox
                 android:id="@+id/checkBox4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="기타 자세한 내용은 이용약관 및 개인정보처리방침에 따라 동의합니다." />
+                android:textSize="14sp"
+                android:layout_marginTop="16dp"
+                android:text="기타 자세한 내용은 이용약관 및 개인정보처리방침에 따라 동의합니다. (필수)" />
         </LinearLayout>
     </ScrollView>
 

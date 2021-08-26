@@ -7,6 +7,12 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.hyu.dongzi.databinding.ActivityContract2Binding
 import kotlinx.android.synthetic.main.activity_contract2.*
+import kotlinx.android.synthetic.main.activity_contract2.btn_write
+import kotlinx.android.synthetic.main.activity_contract2.checkBox
+import kotlinx.android.synthetic.main.activity_contract2.checkBox2
+import kotlinx.android.synthetic.main.activity_contract2.checkBox3
+import kotlinx.android.synthetic.main.activity_contract2.checkBox4
+import kotlinx.android.synthetic.main.activity_reg.*
 
 class Contract2Activity : AppCompatActivity() {
     
@@ -27,5 +33,22 @@ class Contract2Activity : AppCompatActivity() {
             intent.putExtra("id", id)
             startActivity(intent)
         }
+
+        binding.checkBox7.setOnClickListener {
+
+            if (binding.checkBox7.isChecked) {
+                binding.checkBox.isChecked = true
+                binding.checkBox2.isChecked = true
+                binding.checkBox3.isChecked = true
+                binding.checkBox4.isChecked = true
+            } else {
+                binding.checkBox.isChecked = false
+                binding.checkBox2.isChecked = false
+                binding.checkBox3.isChecked = false
+                binding.checkBox4.isChecked = false
+            }
+
+        }
+
     }
 }
