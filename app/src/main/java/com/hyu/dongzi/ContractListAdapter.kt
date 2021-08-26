@@ -49,6 +49,19 @@ class ContractListAdapter(private val List: MutableList<Contract>) : BaseAdapter
         address?.text = List[position].address
         buyerName?.text = List[position].buyerName
 
+        database.getReference("users").child(uid).child("name")
+            .addValueEventListener(object : ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+
+                    val name = snapshot.value.toString()
+                    if (true) {
+                        view?.visibility = View.GONE
+                    }
+                }
+                override fun onCancelled(error: DatabaseError) {
+                }
+            })
+
 
         return view!!
 
