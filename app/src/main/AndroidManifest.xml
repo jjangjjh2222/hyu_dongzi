@@ -29,6 +29,9 @@
         android:theme="@style/Theme.Hyu_dongzi"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".ContractDetailActivity"
+            android:exported="true" />
+        <activity
             android:name=".mydetail.TermsActivity"
             android:exported="true" />
         <activity
