@@ -36,7 +36,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/btn_write"
+        app:layout_constraintBottom_toTopOf="@+id/contractDetailButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:padding="20dp"
@@ -231,7 +231,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/btn_write"
+        android:id="@+id/contractDetailButton"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_margin="20dp"

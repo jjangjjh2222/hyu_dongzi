@@ -26,7 +26,7 @@ class Contract3Activity : AppCompatActivity() {
 
         val uid = auth.currentUser?.uid.toString()
 
-        btn_write.setOnClickListener {
+        contractDetailButton.setOnClickListener {
             val intent = Intent(this, Contract4Activity::class.java)
             intent.putExtra("id", id)
             startActivity(intent)

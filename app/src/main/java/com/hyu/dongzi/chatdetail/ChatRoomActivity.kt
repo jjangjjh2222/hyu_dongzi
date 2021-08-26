@@ -88,6 +88,8 @@ class ChatRoomActivity : AppCompatActivity() {
             )
 
             chatDB.push().setValue(chatItem)
+
+            binding.messageEditText.setText("")
         }
     }
 }

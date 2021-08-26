@@ -80,7 +80,7 @@ class RoomInformationActivity : AppCompatActivity() {
             myRef.child(key).setValue(
                 ChatListItem(
 
-                    sellerId = id!!
+                    roomId = id!!
 
 
                 )

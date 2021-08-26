@@ -27,7 +27,7 @@ class RegActivity : AppCompatActivity() {
 
         }
 
-        btn_write.setOnClickListener {
+        contractDetailButton.setOnClickListener {
             val intent = Intent(this, RegNextActivity::class.java )
             startActivity(intent)
         }

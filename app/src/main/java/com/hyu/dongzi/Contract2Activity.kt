@@ -7,11 +7,7 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.hyu.dongzi.databinding.ActivityContract2Binding
 import kotlinx.android.synthetic.main.activity_contract2.*
-import kotlinx.android.synthetic.main.activity_contract2.btn_write
-import kotlinx.android.synthetic.main.activity_contract2.checkBox
-import kotlinx.android.synthetic.main.activity_contract2.checkBox2
-import kotlinx.android.synthetic.main.activity_contract2.checkBox3
-import kotlinx.android.synthetic.main.activity_contract2.checkBox4
+import kotlinx.android.synthetic.main.activity_contract2.contractDetailButton
 import kotlinx.android.synthetic.main.activity_reg.*
 
 class Contract2Activity : AppCompatActivity() {
@@ -28,7 +24,7 @@ class Contract2Activity : AppCompatActivity() {
 
         val uid = auth.currentUser?.uid.toString()
 
-        btn_write.setOnClickListener {
+        contractDetailButton.setOnClickListener {
             val intent = Intent(this, Contract3Activity::class.java)
             intent.putExtra("id", id)
             startActivity(intent)
