@@ -15,6 +15,10 @@ import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.hyu.dongzi.*
 import com.hyu.dongzi.databinding.FragmentUserBinding
+import com.hyu.dongzi.mydetail.AskActivity
+import com.hyu.dongzi.mydetail.NoticeActivity
+import com.hyu.dongzi.mydetail.OpenSourceActivity
+import com.hyu.dongzi.mydetail.TermsActivity
 import kotlinx.android.synthetic.main.fragment_user.*
 
 class UserFragment : Fragment() {
@@ -50,9 +54,33 @@ class UserFragment : Fragment() {
             startActivity(intent)
         }
 
-        // 학생증 인증 버튼
+        // 내 매물 버튼
         binding.btnMyRoom.setOnClickListener {
             val intent = Intent(this.context, MyRoomActivity::class.java)
+            startActivity(intent)
+        }
+
+        //  공지사항 버튼
+        binding.btnNotice.setOnClickListener{
+            val intent = Intent(this.context, NoticeActivity::class.java)
+            startActivity(intent)
+        }
+
+        //  문의하기 버튼
+        binding.btnAsk.setOnClickListener{
+            val intent = Intent(this.context, AskActivity::class.java)
+            startActivity(intent)
+        }
+
+        //  오픈소스 라이선스 버튼
+        binding.btnOpensource.setOnClickListener{
+            val intent = Intent(this.context, OpenSourceActivity::class.java)
+            startActivity(intent)
+        }
+
+        // 서비스 이용약관 버튼
+        binding.btnTerms.setOnClickListener{
+            val intent = Intent(this.context, TermsActivity::class.java)
             startActivity(intent)
         }
 

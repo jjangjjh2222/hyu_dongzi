@@ -195,6 +195,7 @@
                 android:background="#CDCDCD" />
 
             <LinearLayout
+                android:id="@+id/btn_notice"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:clickable="true"
@@ -228,6 +229,7 @@
 
 
             <LinearLayout
+                android:id="@+id/btn_ask"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:clickable="true"
@@ -260,6 +262,7 @@
                 android:background="#CDCDCD" />
 
             <LinearLayout
+                android:id="@+id/btn_opensource"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:clickable="true"
@@ -292,6 +295,7 @@
                 android:background="#CDCDCD" />
 
             <LinearLayout
+                android:id="@+id/btn_terms"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:clickable="true"
